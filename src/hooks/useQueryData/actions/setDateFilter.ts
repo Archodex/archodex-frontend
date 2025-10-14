@@ -2,6 +2,7 @@ import { DateFilter, isDateFilterEqual } from '@/lib/dateFilter';
 import { LayoutState, QueryData, QueryDataActions } from '..';
 import initializer from '../initializer';
 import clearSelection from '../clearSelection';
+import { isPlayground } from '@/lib/utils';
 
 /**
  * Action to set a new date filter and reinitialize the QueryData state.
@@ -27,7 +28,9 @@ const setDateFilter = (state: QueryData, action: SetDateFilterAction): QueryData
     return state;
   }
 
-  sessionStorage.setItem('dateFilter', JSON.stringify(action.dateFilter));
+  if (!isPlayground) {
+    sessionStorage.setItem('dateFilter', JSON.stringify(action.dateFilter));
+  }
 
   return initializer({ ...clearSelection(state), laidOut: LayoutState.Initial, dateFilter: action.dateFilter });
 };

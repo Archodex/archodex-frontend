@@ -1,6 +1,7 @@
 import { startOfDay, endOfDay, subDays, subMonths, startOfMonth, startOfYear, isEqual, set } from 'date-fns';
 import { type DateRange } from './calendarUtils';
 import validateDateFilter from './validateDateFilter';
+import { isPlayground } from './utils';
 
 export interface DateFilter {
   startDate: Date;
@@ -73,7 +74,7 @@ export const datePresets: DatePreset[] = [
 ];
 
 export const getDefaultDateFilter = (): DateFilter => {
-  const sessionDateFilter = sessionStorage.getItem('dateFilter');
+  const sessionDateFilter = isPlayground ? null : sessionStorage.getItem('dateFilter');
   if (sessionDateFilter) {
     try {
       const storedMaybeFilter = JSON.parse(sessionDateFilter) as unknown;

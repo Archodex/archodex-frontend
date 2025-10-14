@@ -1,7 +1,6 @@
 import { LoaderFunction } from 'react-router';
 import { AccountsLoaderData } from './accountsLoader';
-import playgroundSecrets from './playgroundData/secrets.json';
-import playgroundInventory from './playgroundData/inventory.json';
+import { secrets as playgroundSecrets, inventory as playgroundInventory } from './playgroundData';
 import { isPlayground } from './utils';
 import { AccountUnreachableError } from '@/ErrorBoundary';
 
@@ -50,7 +49,7 @@ export const secretsLoader: LoaderFunction = async (
 
   if (isPlayground) {
     if (accountId === '2529412351') {
-      return new Response(JSON.stringify(playgroundSecrets), {
+      return new Response(JSON.stringify(playgroundSecrets()), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
       });
@@ -67,7 +66,7 @@ export const allLoader: LoaderFunction = async ({ params: { accountId } }, accou
 
   if (isPlayground) {
     if (accountId === '2529412351') {
-      return new Response(JSON.stringify(playgroundInventory), {
+      return new Response(JSON.stringify(playgroundInventory()), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
       });

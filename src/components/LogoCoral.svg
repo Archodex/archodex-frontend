@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50mm" height="43.21mm" version="1.1" viewBox="0 0 50 43.21" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-71.702 -90.752)">
+  <g transform="matrix(.41152 0 0 .41152 8.115 75.944)" fill="none" stroke="#ee847b" stroke-linecap="round" stroke-width="5">
+   <path d="m157.02 138.48 46.6-100"/>
+   <path d="m203.62 38.483h23.3"/>
+   <path d="m273.52 138.48h-23.3"/>
+   <path d="m215.22 63.483 34.9 75"/>
+   <path d="m226.92 38.483 46.6 100"/>
+   <path d="m157.02 138.48h23.3"/>
+   <path d="m195.52 107.98 36.074-5.9924"/>
+   <path d="m180.32 138.48 46.6-100"/>
+  </g>
+ </g>
+</svg>

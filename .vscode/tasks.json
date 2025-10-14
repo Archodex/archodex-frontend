@@ -1,0 +1,54 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "set -a; source ${workspaceFolder}/.vscode/.env; npm run dev",
+			"problemMatcher": [],
+			"label": "npm: dev (archodex.com accounts backend)",
+		},
+		{
+			"type": "shell",
+			"command": "npm",
+			"args": ["run", "dev"],
+			"problemMatcher": [],
+			"label": "npm: dev (playground)",
+			"options": {
+				"env": {
+					"VITE_ARCHODEX_PLAYGROUND": "true",
+				}
+			}
+		},
+		{
+			"type": "shell",
+			"command": "set -a; source ${workspaceFolder}/.vscode/.env; npm run dev",
+			"problemMatcher": [],
+			"label": "npm: dev (local accounts backend)",
+			"options": {
+				"env": {
+					"VITE_ARCHODEX_ACCOUNTS_BACKEND_ENDPOINT": "http://localhost:5731"
+				}
+			}
+		},
+		{
+			"type": "shell",
+			"command": "set -a; source ${workspaceFolder}/.vscode/.env; npm build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "npm: build",
+			"detail": "tsc -b && vite build"
+		},
+		{
+      "type": "shell",
+      "command": "act --platform ubuntu-latest=catthehacker/ubuntu:act-24.04 --container-architecture linux/arm64 --bind --env-file <(aws configure export-credentials --format env --profile=archodex-dev-AdministratorAccess) --use-new-action-cache --reuse --job deploy",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build"
+      },
+      "label": "act: Run GitHub Actions Workflow deploy.yml locally for dev"
+    }
+	]
+}

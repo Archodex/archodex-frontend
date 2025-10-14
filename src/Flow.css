@@ -1,0 +1,23 @@
+/* React Flow uses path markers for arrows. We want different colors for
+ * selected and unselected markers. To do this, we give each marker an invalid
+ * color name: 'selected' or 'unselected'. This prevents React Flow from putting
+ * colors in the marker's `fill` and `stroke` attributes. React Flow also puts
+ * these names into the marker id as a param: `color=<selected|unselected>`. We
+ * then match the marker id with a CSS selector to apply the correct styles.
+ */
+defs > marker {
+  &[id^='1__color=unselected'] > polyline {
+    fill: var(--color-foreground);
+    stroke: var(--color-foreground);
+
+    html.dark & {
+      fill: var(--color-primary);
+      stroke: var(--color-primary);
+    }
+  }
+
+  &[id^='1__color=selected'] > polyline {
+    fill: var(--primary);
+    stroke: var(--primary);
+  }
+}

@@ -1,0 +1,13 @@
+name: PR Lint and Type Check
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-type-check:
+    uses: ./.github/workflows/lint-and-type-check.yml
+    permissions:
+      contents: read

@@ -1,0 +1,45 @@
+name: PR Results Comment
+
+on:
+  workflow_run:
+    workflows: [PR Lint and Type Check]
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: read
+  pull-requests: write
+
+jobs:
+  post-coverage-comment:
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get PR number
+        id: pr
+        run: |
+          PR_DATA='${{ toJSON(github.event.workflow_run.pull_requests) }}'
+          PR_NUMBER=$(echo "$PR_DATA" | jq -r '.[0].number')
+
+          if [ -z "$PR_NUMBER" ]; then
+            echo "No PR number found in workflow_run data"
+            exit 1
+          fi
+
+          echo "number=$PR_NUMBER" >> $GITHUB_OUTPUT
+
+      - name: Download coverage artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage
+          path: coverage
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Report coverage
+        if: steps.pr.outputs.number != ''
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          comment-on: pr
+          pr-number: ${{ steps.pr.outputs.number }}

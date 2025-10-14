@@ -1,0 +1,65 @@
+name: Deploy
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  ACT: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.ARCHODEX_FRONTEND_AWS_ROLE_ARN }}
+          aws-region: 'us-west-2'
+          mask-aws-account-id: true
+          role-chaining: env.ACT == 'true'
+
+      - name: Install AWS CLI v2
+        run: |-
+          echo "Installing AWS CLI v2"
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-$(uname -m).zip" -o /tmp/awscliv2.zip
+          unzip -q /tmp/awscliv2.zip -d /tmp
+          rm /tmp/awscliv2.zip
+          sudo /tmp/aws/install --update
+          rm -rf /tmp/aws/
+          aws --version
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      - name: Build
+        run: |-
+          USER_POOL_ID=$(aws cognito-idp list-user-pools --max-results 60 --query 'UserPools[?Name==`archodex`].Id' --output text)
+          export VITE_USER_POOL_CLIENT_ID=$(aws cognito-idp list-user-pool-clients --user-pool-id $USER_POOL_ID --max-results 60 --query 'UserPoolClients[?ClientName==`app`].ClientId' --output text)
+
+          export VITE_ARCHODEX_REGIONS=$(aws ssm get-parameter --name "customer_data_regions" --query "Parameter.Value" --output text)
+
+          npm ci
+          npm run build
+
+      - name: Sync assets to S3
+        run: |-
+          ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+
+          aws s3 sync --size-only dist/ s3://archodex-backend-frontend-assets-${ACCOUNT_ID}/
+          aws s3 cp dist/index.html s3://archodex-backend-frontend-assets-${ACCOUNT_ID}/index.html
+          aws s3 sync --size-only --delete dist/ s3://archodex-backend-frontend-assets-${ACCOUNT_ID}/

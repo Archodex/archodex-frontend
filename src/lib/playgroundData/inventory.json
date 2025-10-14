@@ -1,0 +1,3184 @@
+{
+  "resources": [
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "amazon/dynamodb-local" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.908240921Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "hashicorp/vault" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.830797004Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/adservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.843830004Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/cartservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.860493587Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/checkoutservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.844739587Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/currencyservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.852038171Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/emailservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.843149587Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/frontend" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.856019212Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/loadgenerator" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.860686754Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/paymentservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.889634421Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/productcatalogservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.897048504Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/recommendationservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.890403712Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/redis" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.898121337Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/rust" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.907964587Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/shippingservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.843463171Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/subscriptions" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.907738379Z",
+      "last_seen_at": "2025-06-20T00:15:05.474498714Z"
+    },
+    {
+      "id": [{ "type": "Container Repository", "id": "docker.io" }],
+      "first_seen_at": "2025-06-02T16:40:11.830796587Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "GitHub Service", "id": "https://github.com" },
+        { "type": "Organization", "id": "Archodex" },
+        { "type": "Git Repository", "id": "microservices-demo" },
+        { "type": "Blob", "id": "src/subscriptions/charge.js" }
+      ],
+      "first_seen_at": "2025-06-02T19:32:59.253970083Z",
+      "last_seen_at": "2025-06-02T19:32:59.253970083Z"
+    },
+    {
+      "id": [
+        { "type": "GitHub Service", "id": "https://github.com" },
+        { "type": "Organization", "id": "Archodex" },
+        { "type": "Git Repository", "id": "microservices-demo" }
+      ],
+      "first_seen_at": "2025-06-02T19:32:59.253968292Z",
+      "last_seen_at": "2025-06-02T19:32:59.253968292Z"
+    },
+    {
+      "id": [
+        { "type": "GitHub Service", "id": "https://github.com" },
+        { "type": "Organization", "id": "Archodex" }
+      ],
+      "first_seen_at": "2025-06-02T19:32:59.253939292Z",
+      "last_seen_at": "2025-06-02T19:32:59.253939292Z"
+    },
+    {
+      "id": [{ "type": "GitHub Service", "id": "https://github.com" }],
+      "first_seen_at": "2025-06-02T19:32:59.253938500Z",
+      "last_seen_at": "2025-06-02T19:32:59.253938500Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "Pod", "id": "archodex-agent-dev" },
+        { "type": "Container", "id": "dev" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.907959712Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "Pod", "id": "archodex-agent-dev" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.897948171Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "Service", "id": "archodex-backend-dev" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.816264296Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "Service", "id": "archodex-backend-headless" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.816327212Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "Service", "id": "kubernetes" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.816362629Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "StatefulSet", "id": "archodex-backend-dev" },
+        { "type": "Container", "id": "backend" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.908200171Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "StatefulSet", "id": "archodex-backend-dev" },
+        { "type": "Container", "id": "dynamodb-local" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.908236587Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "StatefulSet", "id": "archodex-backend-dev" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.833281046Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.816264796Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "CronJob", "id": "subscriptions" },
+        { "type": "Container", "id": "job" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.907726837Z",
+      "last_seen_at": "2025-06-20T00:15:05.474454672Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "CronJob", "id": "subscriptions" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.897657462Z",
+      "last_seen_at": "2025-06-20T00:15:05.474454672Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "adservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.843822962Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "adservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.839365671Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "cartservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.906937879Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "cartservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.897363462Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "checkoutservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.908787796Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "checkoutservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.898225921Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "currencyservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.862478171Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "currencyservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.861092379Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "emailservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.910082796Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "emailservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.909456921Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "frontend" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.897754629Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "frontend" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.890634671Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "loadgenerator" },
+        { "type": "Container", "id": "main" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.910344837Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "loadgenerator" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.909945587Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "paymentservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.909241212Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "paymentservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.905264629Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "productcatalogservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.897043379Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "productcatalogservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.889943337Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "recommendationservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.890357712Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "recommendationservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.889066337Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "redis-cart" },
+        { "type": "Container", "id": "redis" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.910168421Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "redis-cart" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.909641504Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "shippingservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.843455421Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "shippingservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.836360962Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "adservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.816862837Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "cartservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.816904337Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "checkoutservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.816960504Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "currencyservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.816998212Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "emailservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817042296Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "frontend" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817078504Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "frontend-external" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817112837Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "paymentservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817156546Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "productcatalogservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817197004Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "recommendationservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817233087Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "redis-cart" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817281546Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "shippingservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817320837Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" }
+      ],
+      "environments": ["prod"],
+      "first_seen_at": "2025-06-02T16:40:11.816863379Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "adservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.857675296Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "adservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.844638129Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "cartservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.860484462Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "cartservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.853755796Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "checkoutservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.844736379Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "checkoutservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.843752379Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "currencyservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.852030212Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "currencyservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.843916504Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "emailservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.843145129Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "emailservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.839347796Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "frontend" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.856015587Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "frontend" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.844259087Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "loadgenerator" },
+        { "type": "Container", "id": "main" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.860684337Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "loadgenerator" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.855925212Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "paymentservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.889628879Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "paymentservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.888174504Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "productcatalogservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.897814296Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "productcatalogservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.894606712Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "recommendationservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.897880462Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "recommendationservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.894825004Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "redis-cart" },
+        { "type": "Container", "id": "redis" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.898114879Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "redis-cart" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.895183712Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "shippingservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.885218421Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "shippingservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.885103712Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "adservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817478712Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "cartservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817513046Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "checkoutservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817542462Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "currencyservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817587462Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "emailservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817607629Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "frontend" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817627421Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "frontend-external" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817660671Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "paymentservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817704171Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "productcatalogservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817742337Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "recommendationservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817785462Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "redis-cart" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817823004Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "shippingservice" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.817850421Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" }
+      ],
+      "environments": ["qa"],
+      "first_seen_at": "2025-06-02T16:40:11.817479254Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "Service", "id": "vault" },
+        { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+        { "type": "Secrets Engine Mount", "id": "secret" },
+        { "type": "Secret", "id": "prod/sendgrid" }
+      ],
+      "environments": ["prod"],
+      "first_seen_at": "2025-06-20T00:15:08.997310757Z",
+      "last_seen_at": "2025-06-20T00:15:12.361168217Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "Service", "id": "vault" },
+        { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+        { "type": "Secrets Engine Mount", "id": "secret" },
+        { "type": "Secret", "id": "prod/stripe" }
+      ],
+      "environments": ["prod"],
+      "first_seen_at": "2025-06-02T16:40:53.835092385Z",
+      "last_seen_at": "2025-06-06T00:22:53.785644134Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "Service", "id": "vault" },
+        { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+        { "type": "Secrets Engine Mount", "id": "secret" },
+        { "type": "Secret", "id": "qa/stripe" }
+      ],
+      "environments": ["qa"],
+      "first_seen_at": "2025-06-02T16:40:53.731025176Z",
+      "last_seen_at": "2025-06-06T00:22:53.707947842Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "Service", "id": "vault" },
+        { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+        { "type": "Secrets Engine Mount", "id": "secret" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:53.731277343Z",
+      "last_seen_at": "2025-06-20T00:15:12.361384217Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "Service", "id": "vault" },
+        { "type": "HashiCorp Vault Service", "id": "vault.vault" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:53.731382801Z",
+      "last_seen_at": "2025-06-20T00:15:12.361499592Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "Service", "id": "vault" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.815889671Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "Service", "id": "vault-internal" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.815998046Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "StatefulSet", "id": "vault" },
+        { "type": "Container", "id": "vault" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.830792879Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "StatefulSet", "id": "vault" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.830698546Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" }
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.815890379Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [{ "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" }],
+      "first_seen_at": "2025-06-02T16:40:11.815893004Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "id": [{ "type": "Secret Value", "id": "2659c91418643fa45351fc9cc8ee7df783c83d9f90999a4ad1babc834983451c" }],
+      "first_seen_at": "2025-06-02T16:40:40.275548753Z",
+      "last_seen_at": "2025-06-20T00:15:09.228050466Z"
+    },
+    {
+      "id": [{ "type": "Secret Value", "id": "cae031f06a86e6688429edbcce9eb259fc40f6693b0bcdd910105a76133a4c73" }],
+      "first_seen_at": "2025-06-20T00:15:08.997807424Z",
+      "last_seen_at": "2025-06-20T00:15:12.508982092Z"
+    },
+    {
+      "id": [{ "type": "Secret Value", "id": "ff5d2d0b34e9840533377f79116cbee3ade6410353e12e928dbeb524c87d6cc1" }],
+      "first_seen_at": "2025-06-02T16:40:30.790336721Z",
+      "last_seen_at": "2025-06-20T00:15:12.580256926Z"
+    },
+    {
+      "id": [{ "type": "SendGrid API", "id": "api.sendgrid.com" }],
+      "first_seen_at": "2025-06-20T00:15:09.148582966Z",
+      "last_seen_at": "2025-06-20T00:15:12.508713134Z"
+    },
+    {
+      "id": [{ "type": "Stripe API", "id": "api.stripe.com" }],
+      "first_seen_at": "2025-06-02T16:40:30.788623721Z",
+      "last_seen_at": "2025-06-20T00:15:12.579926218Z"
+    }
+  ],
+  "events": [
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "CronJob", "id": "subscriptions" },
+        { "type": "Container", "id": "job" }
+      ],
+      "type": "Accessed",
+      "resource": [{ "type": "Stripe API", "id": "api.stripe.com" }],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "CronJob", "id": "subscriptions" },
+              { "type": "Container", "id": "job" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Secret Value", "id": "2659c91418643fa45351fc9cc8ee7df783c83d9f90999a4ad1babc834983451c" }
+            ],
+            "event": "Used"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:41:01.454426097Z",
+      "last_seen_at": "2025-06-06T00:23:01.259957679Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "productcatalogservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/productcatalogservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "productcatalogservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.897796712Z",
+      "last_seen_at": "2025-06-20T00:15:02.208416504Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "paymentservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "paymentservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Service", "id": "paymentservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.907502546Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "StatefulSet", "id": "archodex-backend-dev" },
+        { "type": "Container", "id": "dynamodb-local" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "amazon/dynamodb-local" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "default" },
+              { "type": "StatefulSet", "id": "archodex-backend-dev" },
+              { "type": "Container", "id": "dynamodb-local" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.908175004Z",
+      "last_seen_at": "2025-06-20T00:15:02.187232504Z"
+    },
+    {
+      "principal": [
+        { "type": "GitHub Service", "id": "https://github.com" },
+        { "type": "Organization", "id": "Archodex" },
+        { "type": "Git Repository", "id": "microservices-demo" },
+        { "type": "Blob", "id": "src/subscriptions/charge.js" }
+      ],
+      "type": "Hardcoded",
+      "resource": [
+        { "type": "Secret Value", "id": "2659c91418643fa45351fc9cc8ee7df783c83d9f90999a4ad1babc834983451c" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "GitHub Service", "id": "https://github.com" },
+              { "type": "Organization", "id": "Archodex" },
+              { "type": "Git Repository", "id": "microservices-demo" },
+              { "type": "Blob", "id": "src/subscriptions/charge.js" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T19:32:59.253970083Z",
+      "last_seen_at": "2025-06-02T19:32:59.253970083Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "currencyservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/currencyservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "currencyservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.862097004Z",
+      "last_seen_at": "2025-06-20T00:15:02.209085213Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "redis-cart" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "redis-cart" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Service", "id": "redis-cart" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.895255671Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "recommendationservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "recommendationservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Service", "id": "recommendationservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.889273962Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "paymentservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Accessed",
+      "resource": [{ "type": "Stripe API", "id": "api.stripe.com" }],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "paymentservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Secret Value", "id": "ff5d2d0b34e9840533377f79116cbee3ade6410353e12e928dbeb524c87d6cc1" }
+            ],
+            "event": "Used"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:30.813809096Z",
+      "last_seen_at": "2025-06-20T00:15:12.580694718Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "redis-cart" },
+        { "type": "Container", "id": "redis" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/redis" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "redis-cart" },
+              { "type": "Container", "id": "redis" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.898058921Z",
+      "last_seen_at": "2025-06-20T00:15:02.209857421Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "emailservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/emailservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "emailservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.910073379Z",
+      "last_seen_at": "2025-06-20T00:15:02.208839046Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "frontend" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "frontend" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Service", "id": "frontend" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.890846087Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "shippingservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "shippingservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Service", "id": "shippingservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.837106212Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Secret Value", "id": "cae031f06a86e6688429edbcce9eb259fc40f6693b0bcdd910105a76133a4c73" }
+      ],
+      "type": "Accessed",
+      "resource": [{ "type": "SendGrid API", "id": "api.sendgrid.com" }],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "emailservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Secret Value", "id": "cae031f06a86e6688429edbcce9eb259fc40f6693b0bcdd910105a76133a4c73" }
+            ],
+            "event": "Used"
+          }
+        ],
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "emailservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Secret Value", "id": "cae031f06a86e6688429edbcce9eb259fc40f6693b0bcdd910105a76133a4c73" }
+            ],
+            "event": "Used"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-20T00:15:09.150754924Z",
+      "last_seen_at": "2025-06-20T00:15:12.509486134Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "Service", "id": "vault" },
+        { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+        { "type": "Secrets Engine Mount", "id": "secret" },
+        { "type": "Secret", "id": "qa/stripe" }
+      ],
+      "type": "Held",
+      "resource": [
+        { "type": "Secret Value", "id": "ff5d2d0b34e9840533377f79116cbee3ade6410353e12e928dbeb524c87d6cc1" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "paymentservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "vault" },
+              { "type": "Service", "id": "vault" },
+              { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secret", "id": "qa/stripe" }
+            ],
+            "event": "Read"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:53.731765760Z",
+      "last_seen_at": "2025-06-06T00:22:53.708966509Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "checkoutservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "checkoutservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Service", "id": "checkoutservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.907201254Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "productcatalogservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/productcatalogservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "productcatalogservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.897009254Z",
+      "last_seen_at": "2025-06-20T00:15:02.211907129Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "redis-cart" },
+        { "type": "Container", "id": "redis" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/redis" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "redis-cart" },
+              { "type": "Container", "id": "redis" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.910153879Z",
+      "last_seen_at": "2025-06-20T00:15:02.211246213Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "Service", "id": "vault" },
+        { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+        { "type": "Secrets Engine Mount", "id": "secret" },
+        { "type": "Secret", "id": "prod/sendgrid" }
+      ],
+      "type": "Held",
+      "resource": [
+        { "type": "Secret Value", "id": "cae031f06a86e6688429edbcce9eb259fc40f6693b0bcdd910105a76133a4c73" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "emailservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "vault" },
+              { "type": "Service", "id": "vault" },
+              { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secret", "id": "prod/sendgrid" }
+            ],
+            "event": "Read"
+          }
+        ],
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "emailservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "vault" },
+              { "type": "Service", "id": "vault" },
+              { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secret", "id": "prod/sendgrid" }
+            ],
+            "event": "Read"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-20T00:15:10.850872258Z",
+      "last_seen_at": "2025-06-20T00:15:08.998013507Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "shippingservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/shippingservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "shippingservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.843397046Z",
+      "last_seen_at": "2025-06-20T00:15:02.210967588Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "currencyservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "currencyservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Service", "id": "currencyservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.861406337Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "adservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/adservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "adservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.843798171Z",
+      "last_seen_at": "2025-06-20T00:15:02.208221629Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "loadgenerator" },
+        { "type": "Container", "id": "main" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/loadgenerator" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "loadgenerator" },
+              { "type": "Container", "id": "main" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.910331462Z",
+      "last_seen_at": "2025-06-20T00:15:02.211099338Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "adservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "adservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Service", "id": "adservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.845257046Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "emailservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Held",
+      "resource": [
+        { "type": "Secret Value", "id": "cae031f06a86e6688429edbcce9eb259fc40f6693b0bcdd910105a76133a4c73" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "emailservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "vault" },
+              { "type": "Service", "id": "vault" },
+              { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secret", "id": "prod/sendgrid" }
+            ],
+            "event": "Read"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-20T00:15:08.998013507Z",
+      "last_seen_at": "2025-06-20T00:15:08.998013507Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "frontend-external" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "frontend" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Service", "id": "frontend-external" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.909046712Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "StatefulSet", "id": "archodex-backend-dev" },
+        { "type": "Container", "id": "backend" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/rust" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "default" },
+              { "type": "StatefulSet", "id": "archodex-backend-dev" },
+              { "type": "Container", "id": "backend" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.908175004Z",
+      "last_seen_at": "2025-06-20T00:15:02.187232504Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "Service", "id": "vault" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "StatefulSet", "id": "vault" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "vault" },
+              { "type": "Service", "id": "vault" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.830967296Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "paymentservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/paymentservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "paymentservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.909232379Z",
+      "last_seen_at": "2025-06-20T00:15:02.211561588Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "paymentservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Held",
+      "resource": [
+        { "type": "Secret Value", "id": "ff5d2d0b34e9840533377f79116cbee3ade6410353e12e928dbeb524c87d6cc1" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "paymentservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "vault" },
+              { "type": "Service", "id": "vault" },
+              { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secret", "id": "qa/stripe" }
+            ],
+            "event": "Read"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:53.731765760Z",
+      "last_seen_at": "2025-06-06T00:22:53.708966509Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "checkoutservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/checkoutservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "checkoutservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.844724337Z",
+      "last_seen_at": "2025-06-20T00:15:02.206888963Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "frontend" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/frontend" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "frontend" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.897745837Z",
+      "last_seen_at": "2025-06-20T00:15:02.211427213Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "frontend-external" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "frontend" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Service", "id": "frontend-external" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.890934004Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "StatefulSet", "id": "vault" },
+        { "type": "Container", "id": "vault" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "hashicorp/vault" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "vault" },
+              { "type": "StatefulSet", "id": "vault" },
+              { "type": "Container", "id": "vault" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.830777796Z",
+      "last_seen_at": "2025-06-20T00:15:02.180229546Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "checkoutservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "checkoutservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Service", "id": "checkoutservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.843966879Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "loadgenerator" },
+        { "type": "Container", "id": "main" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/loadgenerator" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "loadgenerator" },
+              { "type": "Container", "id": "main" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.860667962Z",
+      "last_seen_at": "2025-06-20T00:15:02.206033379Z"
+    },
+    {
+      "principal": [
+        { "type": "Secret Value", "id": "ff5d2d0b34e9840533377f79116cbee3ade6410353e12e928dbeb524c87d6cc1" }
+      ],
+      "type": "Accessed",
+      "resource": [{ "type": "Stripe API", "id": "api.stripe.com" }],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "paymentservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Secret Value", "id": "ff5d2d0b34e9840533377f79116cbee3ade6410353e12e928dbeb524c87d6cc1" }
+            ],
+            "event": "Used"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:30.813809096Z",
+      "last_seen_at": "2025-06-20T00:15:12.580694718Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "CronJob", "id": "subscriptions" },
+        { "type": "Container", "id": "job" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/subscriptions" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "CronJob", "id": "subscriptions" },
+              { "type": "Container", "id": "job" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.907515671Z",
+      "last_seen_at": "2025-06-20T00:15:05.473619589Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "shippingservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/shippingservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "shippingservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.885189087Z",
+      "last_seen_at": "2025-06-20T00:15:02.209420421Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "Pod", "id": "archodex-agent-dev" },
+        { "type": "Container", "id": "dev" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/rust" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "default" },
+              { "type": "Pod", "id": "archodex-agent-dev" },
+              { "type": "Container", "id": "dev" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.907932712Z",
+      "last_seen_at": "2025-06-20T00:15:02.179094921Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "emailservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Held",
+      "resource": [
+        { "type": "Secret Value", "id": "cae031f06a86e6688429edbcce9eb259fc40f6693b0bcdd910105a76133a4c73" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "emailservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "vault" },
+              { "type": "Service", "id": "vault" },
+              { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secret", "id": "prod/sendgrid" }
+            ],
+            "event": "Read"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-20T00:15:10.850872258Z",
+      "last_seen_at": "2025-06-20T00:15:12.361810676Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "paymentservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Held",
+      "resource": [
+        { "type": "Secret Value", "id": "2659c91418643fa45351fc9cc8ee7df783c83d9f90999a4ad1babc834983451c" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "paymentservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "vault" },
+              { "type": "Service", "id": "vault" },
+              { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secret", "id": "prod/stripe" }
+            ],
+            "event": "Read"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:53.835760510Z",
+      "last_seen_at": "2025-06-06T00:22:53.786241175Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "cartservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "cartservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Service", "id": "cartservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.855728421Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "adservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "adservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Service", "id": "adservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.839715212Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "currencyservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "currencyservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Service", "id": "currencyservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.898392754Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "adservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/adservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "adservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.857261296Z",
+      "last_seen_at": "2025-06-20T00:15:02.203713963Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "frontend" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "frontend" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Service", "id": "frontend" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.845035046Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "shippingservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "shippingservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Service", "id": "shippingservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.886703921Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "frontend" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/frontend" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "frontend" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.855999587Z",
+      "last_seen_at": "2025-06-20T00:15:02.203040254Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "checkoutservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/checkoutservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "checkoutservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.908753629Z",
+      "last_seen_at": "2025-06-20T00:15:02.207682546Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "paymentservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Accessed",
+      "resource": [{ "type": "Stripe API", "id": "api.stripe.com" }],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "paymentservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Secret Value", "id": "2659c91418643fa45351fc9cc8ee7df783c83d9f90999a4ad1babc834983451c" }
+            ],
+            "event": "Used"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:40.276227420Z",
+      "last_seen_at": "2025-06-20T00:15:09.228639049Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "currencyservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/currencyservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "currencyservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.851990171Z",
+      "last_seen_at": "2025-06-20T00:15:02.204490213Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "emailservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Accessed",
+      "resource": [{ "type": "SendGrid API", "id": "api.sendgrid.com" }],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "emailservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Secret Value", "id": "cae031f06a86e6688429edbcce9eb259fc40f6693b0bcdd910105a76133a4c73" }
+            ],
+            "event": "Used"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-20T00:15:09.150754924Z",
+      "last_seen_at": "2025-06-20T00:15:09.150754924Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "productcatalogservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "productcatalogservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Service", "id": "productcatalogservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.894994212Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "cartservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "cartservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Service", "id": "cartservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.908502046Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "emailservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "emailservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Service", "id": "emailservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.909573921Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "emailservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Accessed",
+      "resource": [{ "type": "SendGrid API", "id": "api.sendgrid.com" }],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "emailservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Secret Value", "id": "cae031f06a86e6688429edbcce9eb259fc40f6693b0bcdd910105a76133a4c73" }
+            ],
+            "event": "Used"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-20T00:15:10.992611842Z",
+      "last_seen_at": "2025-06-20T00:15:12.509486134Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "emailservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "emailservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Service", "id": "emailservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.839411129Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "productcatalogservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "productcatalogservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Service", "id": "productcatalogservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.890112712Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "Service", "id": "archodex-backend-dev" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "StatefulSet", "id": "archodex-backend-dev" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "default" },
+              { "type": "Service", "id": "archodex-backend-dev" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.833314296Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "emailservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/emailservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "emailservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.843130754Z",
+      "last_seen_at": "2025-06-20T00:15:02.211166046Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Service", "id": "redis-cart" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "redis-cart" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Service", "id": "redis-cart" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.909701921Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "Service", "id": "vault" },
+        { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+        { "type": "Secrets Engine Mount", "id": "secret" },
+        { "type": "Secret", "id": "prod/stripe" }
+      ],
+      "type": "Held",
+      "resource": [
+        { "type": "Secret Value", "id": "2659c91418643fa45351fc9cc8ee7df783c83d9f90999a4ad1babc834983451c" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "paymentservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "vault" },
+              { "type": "Service", "id": "vault" },
+              { "type": "HashiCorp Vault Service", "id": "vault.vault" },
+              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secret", "id": "prod/stripe" }
+            ],
+            "event": "Read"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:53.835760510Z",
+      "last_seen_at": "2025-06-06T00:22:53.786241175Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "cartservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/cartservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "cartservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.906867462Z",
+      "last_seen_at": "2025-06-20T00:15:02.208517671Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "Service", "id": "vault-internal" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "vault" },
+        { "type": "StatefulSet", "id": "vault" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "vault" },
+              { "type": "Service", "id": "vault-internal" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.830900837Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "recommendationservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/recommendationservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "recommendationservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.897871712Z",
+      "last_seen_at": "2025-06-20T00:15:02.211038046Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "paymentservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/paymentservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "paymentservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.889329962Z",
+      "last_seen_at": "2025-06-20T00:15:02.208024963Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "recommendationservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "recommendationservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Service", "id": "recommendationservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.895016046Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "Service", "id": "archodex-backend-headless" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "default" },
+        { "type": "StatefulSet", "id": "archodex-backend-dev" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "default" },
+              { "type": "Service", "id": "archodex-backend-headless" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.840152504Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Secret Value", "id": "2659c91418643fa45351fc9cc8ee7df783c83d9f90999a4ad1babc834983451c" }
+      ],
+      "type": "Accessed",
+      "resource": [{ "type": "Stripe API", "id": "api.stripe.com" }],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "CronJob", "id": "subscriptions" },
+              { "type": "Container", "id": "job" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Secret Value", "id": "2659c91418643fa45351fc9cc8ee7df783c83d9f90999a4ad1babc834983451c" }
+            ],
+            "event": "Used"
+          }
+        ],
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "paymentservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          },
+          {
+            "id": [
+              { "type": "Secret Value", "id": "2659c91418643fa45351fc9cc8ee7df783c83d9f90999a4ad1babc834983451c" }
+            ],
+            "event": "Used"
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:41:01.454426097Z",
+      "last_seen_at": "2025-06-20T00:15:09.228639049Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Service", "id": "paymentservice" }
+      ],
+      "type": "Targeted",
+      "resource": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "paymentservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Service", "id": "paymentservice" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.889852587Z",
+      "last_seen_at": "2025-06-20T00:15:24.419032542Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "qa" },
+        { "type": "Deployment", "id": "cartservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/cartservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "qa" },
+              { "type": "Deployment", "id": "cartservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.860225504Z",
+      "last_seen_at": "2025-06-20T00:15:02.208675713Z"
+    },
+    {
+      "principal": [
+        { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+        { "type": "Namespace", "id": "prod" },
+        { "type": "Deployment", "id": "recommendationservice" },
+        { "type": "Container", "id": "server" }
+      ],
+      "type": "Ran Image",
+      "resource": [
+        { "type": "Container Repository", "id": "docker.io" },
+        { "type": "Container Image", "id": "library/recommendationservice" }
+      ],
+      "principal_chains": [
+        [
+          {
+            "id": [
+              { "type": "Kubernetes Cluster", "id": "d77d838b-bdca-419f-9a55-71d8a8c34439" },
+              { "type": "Namespace", "id": "prod" },
+              { "type": "Deployment", "id": "recommendationservice" },
+              { "type": "Container", "id": "server" }
+            ]
+          }
+        ]
+      ],
+      "first_seen_at": "2025-06-02T16:40:11.890304462Z",
+      "last_seen_at": "2025-06-20T00:15:02.211366421Z"
+    }
+  ]
+}

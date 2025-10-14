@@ -1,0 +1,32 @@
+name: Main Branch Lint and Type Check
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  lint-and-type-check:
+    uses: ./.github/workflows/lint-and-type-check.yml
+    permissions:
+      contents: read
+
+  report-coverage:
+    needs: lint-and-type-check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download coverage results
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage
+          path: coverage
+
+      - name: Report coverage
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          comment-on: commit

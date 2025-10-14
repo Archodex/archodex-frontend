@@ -1,0 +1,197 @@
+@import 'tailwindcss';
+@source inline("{bg,border}-palette-{0..16}{,-inherited}");
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --color-background: var(--background);
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: hsl(var(--border));
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --shadow-lg-dark: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-2xl-dark: 0 25px 50px -12px rgb(255 255 255 / 0.25);
+
+  --resource-title-height: 46px;
+  --env-badge-size: 20px;
+  --issue-badge-size: 26px;
+
+  --color-palette-0: hsl(185, 39%, 71%);
+  --color-palette-1: hsl(207.5, 39%, 71%);
+  --color-palette-2: hsl(230, 39%, 71%);
+  --color-palette-3: hsl(252.5, 39%, 71%);
+  --color-palette-4: hsl(275, 39%, 71%);
+  --color-palette-5: hsl(297.5, 39%, 71%);
+  --color-palette-6: hsl(320, 39%, 71%);
+  --color-palette-7: hsl(342.5, 39%, 71%);
+  --color-palette-8: hsl(5, 39%, 71%); /* Same as primary theme color */
+  --color-palette-9: hsl(27.5, 39%, 71%);
+  --color-palette-10: hsl(50, 39%, 71%);
+  --color-palette-11: hsl(72.5, 39%, 71%);
+  --color-palette-12: hsl(95, 39%, 71%);
+  --color-palette-13: hsl(117.5, 39%, 71%);
+  --color-palette-14: hsl(140, 39%, 71%);
+  --color-palette-15: hsl(162.5, 39%, 71%);
+
+  --color-palette-0-inherited: hsl(185, 39%, 86%);
+  --color-palette-1-inherited: hsl(207.5, 39%, 86%);
+  --color-palette-2-inherited: hsl(230, 39%, 86%);
+  --color-palette-3-inherited: hsl(252.5, 39%, 86%);
+  --color-palette-4-inherited: hsl(275, 39%, 86%);
+  --color-palette-5-inherited: hsl(297.5, 39%, 86%);
+  --color-palette-6-inherited: hsl(320, 39%, 86%);
+  --color-palette-7-inherited: hsl(342.5, 39%, 86%);
+  --color-palette-8-inherited: hsl(5, 39%, 86%);
+  --color-palette-9-inherited: hsl(27.5, 39%, 86%);
+  --color-palette-10-inherited: hsl(50, 39%, 86%);
+  --color-palette-11-inherited: hsl(72.5, 39%, 86%);
+  --color-palette-12-inherited: hsl(95, 39%, 86%);
+  --color-palette-13-inherited: hsl(117.5, 39%, 86%);
+  --color-palette-14-inherited: hsl(140, 39%, 86%);
+  --color-palette-15-inherited: hsl(162.5, 39%, 86%);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer base {
+  :root {
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: #ee847b;
+
+    --background: white;
+    --foreground: 161 5% 0%;
+    --card: white;
+    --card-foreground: 161 5% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 161 5% 0%;
+    --primary: #ee847b;
+    --primary-foreground: white;
+    --secondary: #f3f4f6;
+    --secondary-foreground: 0 0% 0%;
+    --muted: #f3f4f6;
+    --muted-foreground: var(--color-gray-400);
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: white;
+    --border: 220 13% 91%;
+    --input: oklch(0.922 0 0);
+    --ring: #ee847b;
+    --radius: 0.5rem;
+
+    --node-title-text: var(--primary);
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: #ee847b;
+
+    --background: black;
+    --foreground: 161 5% 90%;
+    --card: 161 50% 0%;
+    --card-foreground: 161 5% 90%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 161 5% 90%;
+    --primary: #ee847b;
+    --primary-foreground: black;
+    --secondary: #27272a;
+    --secondary-foreground: 0 0% 100%;
+    --muted: #27272a;
+    --muted-foreground: 161 5% 60%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 240 4.8% 95.9%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: black;
+    --border: 240 3.7% 15.9%;
+    --input: oklch(1 0 0/15%);
+    --ring: #ee847b;
+    --radius: 0.5rem;
+
+    --node-title-text: var(--color-foreground);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+p {
+  @apply [&:not(:first-child)]:mt-4;
+  @apply [&:not(:last-child)]:mb-4;
+}

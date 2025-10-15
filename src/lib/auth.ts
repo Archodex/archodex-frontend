@@ -30,6 +30,10 @@ export function redirectToAuth() {
 
 let _userEmail: string | undefined;
 export const userEmail = () => {
+  if (isPlayground) {
+    return 'me@sprockets2u.com';
+  }
+
   if (!_userEmail) {
     throw new Error('User email is not available before authentication is successful');
   }

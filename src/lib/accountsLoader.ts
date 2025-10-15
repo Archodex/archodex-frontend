@@ -1,6 +1,6 @@
 import { LoaderFunction } from 'react-router';
 import { accountsUrl, isPlayground } from './utils';
-import playgroundAccounts from './playgroundData/accounts.json';
+import { accounts as playgroundAccounts } from './playgroundData';
 import { AuthError } from '@/ErrorBoundary';
 
 export class AccountsLoaderData {
@@ -59,7 +59,7 @@ const accountsLoader: LoaderFunction = async (): Promise<AccountsLoaderData> => 
 
   let accounts;
   if (isPlayground) {
-    accounts = playgroundAccounts.accounts;
+    accounts = playgroundAccounts().accounts;
   } else {
     const response = await fetch(accountsUrl());
 

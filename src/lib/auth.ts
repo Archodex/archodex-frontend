@@ -12,14 +12,17 @@ const archodexDomain = () =>
 
 const authDomain = () => `auth.${archodexDomain()}`;
 
-export function redirectToAuth() {
+export function redirectToAuth(options?: { signup?: boolean }) {
+  const signup = options?.signup ?? false;
+  const path = signup ? '/signup' : '/oauth2/authorize';
+
   const state = btoa(crypto.getRandomValues(new Uint8Array(16)).toString());
   sessionStorage.setItem('cognitoAuthState', state);
 
   sessionStorage.setItem('authHistoryLength', history.length.toString());
   sessionStorage.setItem('authLastPathname', location.pathname);
 
-  const authUrl = new URL('/oauth2/authorize', `https://${authDomain()}`);
+  const authUrl = new URL(path, `https://${authDomain()}`);
   authUrl.searchParams.set('response_type', 'code');
   authUrl.searchParams.set('client_id', USER_POOL_CLIENT_ID);
   authUrl.searchParams.set('state', state);

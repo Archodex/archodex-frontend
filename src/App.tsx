@@ -14,7 +14,7 @@ import {
   useMatches,
 } from 'react-router';
 import QueryView from './QueryView';
-import { idpResponseLoader, isAuthenticated, logOutLoader, passkeyResponseLoader } from './lib/auth';
+import { idpResponseLoader, isAuthenticated, logOutLoader, passkeyResponseLoader, redirectToAuth } from './lib/auth';
 import accountsLoader, { AccountsLoaderData } from './lib/accountsLoader';
 import AccountCreate from './AccountCreate';
 import AccountRoutes from './AccountRoutes';
@@ -65,6 +65,16 @@ function Router() {
             hydrateFallbackElement={<div>Loading...</div>}
             errorElement={<ErrorBoundary />}
           >
+            {!isPlayground && (
+              <Route
+                id="signup"
+                path="signup"
+                loader={() => {
+                  redirectToAuth({ signup: true });
+                }}
+                element={null}
+              />
+            )}
             <Route id="accounts" element={<Dashboard />} loader={accountsLoader}>
               <Route index element={<Accounts />} />
               {!isPlayground && <Route path="create_account" element={<AccountCreate />} />}
@@ -127,6 +137,7 @@ function Router() {
             const results = await Promise.all(
               matchesToLoad.map(async (match) => {
                 if (
+                  match.route.id === 'signup' ||
                   match.route.id === 'idpresponse' ||
                   match.route.id === 'passkeyresponse' ||
                   match.route.id === 'logout'

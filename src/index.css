@@ -189,9 +189,12 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-p {
-  @apply [&:not(:first-child)]:mt-4;
-  @apply [&:not(:last-child)]:mb-4;
+  p a,
+  span a {
+    @apply text-primary hover:underline;
+  }
+  p {
+    @apply [&:not(:first-child)]:mt-4;
+    @apply [&:not(:last-child)]:mb-4;
+  }
 }

@@ -260,7 +260,7 @@ const crossEnvironmentSecretsTutorialSteps: TutorialStepDefinition[] = [
     lightbox: true,
     stateUpdate: ({ queryDataDispatch }, revert) => {
       const sendGridSecretId =
-        '::Kubernetes Cluster::d77d838b-bdca-419f-9a55-71d8a8c34439::Namespace::vault::Service::vault::HashiCorp Vault Service::vault.vault::Secrets Engine Mount::secret::Secret::prod/sendgrid';
+        '::Kubernetes Cluster::d77d838b-bdca-419f-9a55-71d8a8c34439::Namespace::vault::Service::vault::HashiCorp Vault Service::vault.vault::Secrets Engine Mount::vault::Secret::prod/sendgrid';
       if (revert) {
         queryDataDispatch({ action: QueryDataActions.DeselectResource, resourceId: sendGridSecretId });
       } else {
@@ -315,7 +315,7 @@ const crossEnvironmentSecretsTutorialSteps: TutorialStepDefinition[] = [
         { type: 'Namespace', id: 'vault' },
         { type: 'Service', id: 'vault' },
         { type: 'HashiCorp Vault Service', id: 'vault.vault' },
-        { type: 'Secrets Engine Mount', id: 'secret' },
+        { type: 'Secrets Engine Mount', id: 'vault' },
         { type: 'Secret', id: 'prod/sendgrid' },
       ];
 

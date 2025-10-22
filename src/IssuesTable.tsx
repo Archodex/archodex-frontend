@@ -145,7 +145,7 @@ const IssuesTable: React.FC<IssuesTableProps> = ({ issues, selectedIssues }) => 
 
             const tutorialSendGridSecretIssueRef =
               row.id ===
-              'across-environments-::Kubernetes Cluster::d77d838b-bdca-419f-9a55-71d8a8c34439::Namespace::qa::Deployment::emailservice::Container::server-::Kubernetes Cluster::d77d838b-bdca-419f-9a55-71d8a8c34439::Namespace::vault::Service::vault::HashiCorp Vault Service::vault.vault::Secrets Engine Mount::secret::Secret::prod/sendgrid'
+              'across-environments-::Kubernetes Cluster::d77d838b-bdca-419f-9a55-71d8a8c34439::Namespace::qa::Deployment::emailservice::Container::server-::Kubernetes Cluster::d77d838b-bdca-419f-9a55-71d8a8c34439::Namespace::vault::Service::vault::HashiCorp Vault Service::vault.vault::Secrets Engine Mount::vault::Secret::prod/sendgrid'
                 ? elementRef('sendGridSecretIssue')
                 : undefined;
 

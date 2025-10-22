@@ -258,7 +258,7 @@ const ResourceNode = ({ id, selected, data }: NodeProps<ResourceNode>) => {
       : undefined;
   const isTutorialSendGridSecret =
     id ===
-    '::Kubernetes Cluster::d77d838b-bdca-419f-9a55-71d8a8c34439::Namespace::vault::Service::vault::HashiCorp Vault Service::vault.vault::Secrets Engine Mount::secret::Secret::prod/sendgrid';
+    '::Kubernetes Cluster::d77d838b-bdca-419f-9a55-71d8a8c34439::Namespace::vault::Service::vault::HashiCorp Vault Service::vault.vault::Secrets Engine Mount::vault::Secret::prod/sendgrid';
 
   const tutorialSendGridSecretRef = isTutorialSendGridSecret ? elementRef('sendGridSecret') : undefined;
 

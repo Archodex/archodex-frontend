@@ -9,6 +9,7 @@ import { X } from 'lucide-react';
 import TutorialLightbox from './Lightbox';
 import { TutorialCallbacksState } from './CallbacksContext';
 import { TutorialStepCommon } from './Context';
+import { redirectToAuth } from '@/lib/auth';
 
 export type TutorialPopoverStep = TutorialStepCommon & TutorialPopoverStepDefinition & { isInSidebar: boolean };
 
@@ -103,8 +104,13 @@ const TutorialPopover: React.FC<TutorialPopoverProps> = ({
               </Button>
             )}
             {showFinishButton && (
-              <Button autoFocus onClick={tutorialCallbacks.closeTutorial}>
-                Close Tutorial
+              <Button
+                autoFocus
+                onClick={() => {
+                  redirectToAuth({ signup: true });
+                }}
+              >
+                Get Started
               </Button>
             )}
           </div>

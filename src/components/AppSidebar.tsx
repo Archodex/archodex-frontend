@@ -22,6 +22,7 @@ import TutorialCallbacksContext, { ElementRef } from './Tutorial/CallbacksContex
 import TutorialContext from './Tutorial/Context';
 import AccountSwitcher from './AccountSwitcher';
 import User from './User';
+import { redirectToAuth } from '@/lib/auth';
 
 interface MenuItem {
   ref?: ElementRef;
@@ -123,13 +124,23 @@ export const AppSidebar: React.FC = () => {
               </SidebarMenuItem>
             </SidebarMenu>
           )}
+          {isPlayground && (
+            <Button
+              className="cursor-pointer"
+              onClick={() => {
+                redirectToAuth({ signup: true });
+              }}
+            >
+              Get Started
+            </Button>
+          )}
         </SidebarHeader>
         <SidebarSeparator />
         <SidebarContent className="p-2">
           <SidebarMenu>{menuItems(items, accountId, setOpenMobile)}</SidebarMenu>
           {showResumeTutorialButton && (
             <Button
-              className="fixed bottom-10 right-10 z-50"
+              className="fixed bottom-10 right-10 z-50 cursor-pointer"
               onClick={
                 tutorialContext.atEnd
                   ? tutorialCallbacksContext.restartTutorial

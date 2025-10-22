@@ -31,6 +31,12 @@ const TutorialPopover: React.FC<TutorialPopoverProps> = ({
   tutorialCallbacks,
 }) => {
   const popoverContentRef = React.useRef<HTMLDivElement>(null);
+  const [key, setKey] = React.useState(0);
+
+  useEffect(() => {
+    // Update key to force re-mount PopoverContent when tutorialStep changes
+    setKey((prevKey) => prevKey + 1);
+  }, [tutorialStep]);
 
   useEffect(() => {
     const event = tutorialStep.advanceOnAnchorClicked ? 'click' : 'mousedown';
@@ -62,10 +68,11 @@ const TutorialPopover: React.FC<TutorialPopoverProps> = ({
       <Popover open={true}>
         <PopoverAnchor virtualRef={{ current: anchor }} />
         <PopoverContent
+          key={key}
           ref={popoverContentRef}
           side={tutorialStep.side}
           className={[
-            'pt-4',
+            'pt-4 data-[state=open]:delay-500 data-[state=open]:animate-in data-[state=open]:fill-mode-both data-[state=closed]:animate-none',
             tutorialStep.lightbox ? 'not-dark:border-none' : '',
             tutorialStep.contentClassName ?? '',
           ].join(' ')}

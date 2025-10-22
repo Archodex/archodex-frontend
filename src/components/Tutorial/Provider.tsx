@@ -285,6 +285,7 @@ const tutorialReducer: React.Reducer<TutorialState, TutorialReducerArg> = (state
     case 'resumeTutorial': {
       const newState: TutorialState = {
         ...initialTutorialContext(),
+        refs: state.refs,
         closed: false,
         openTagEnvironmentDialogRef: state.openTagEnvironmentDialogRef,
         queuedStateUpdates: state.queuedStateUpdates,

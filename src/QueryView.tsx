@@ -12,6 +12,7 @@ import QueryGraph from './QueryGraph';
 import { DateRangePickerPopover } from './components/DateRangePickerPopover';
 import { type DateFilter } from './lib/dateFilter';
 import MenuSection from './lib/menuSection';
+import GettingStartedDialog from './components/GettingStartedDialog';
 
 export interface QueryViewProps {
   section: MenuSection;
@@ -31,7 +32,15 @@ const QueryView: React.FC<QueryViewProps> = ({ section }) => {
   const { elementRef } = useContext(TutorialCallbacksContext).refs;
   const params = useParams<{ tableTab: string }>();
 
+  const [showGettingStartedDialog, setShowGettingStartedDialog] = useState((loaderData.resources ?? []).length === 0);
+
   const [event, showEvent] = useState<ResourceEvent | undefined>();
+
+  useEffect(() => {
+    if ((loaderData.resources ?? []).length === 0) {
+      setShowGettingStartedDialog(true);
+    }
+  }, [loaderData.resources]);
 
   useEffect(() => {
     queryDataDispatchRef(queryDataDispatch);
@@ -104,6 +113,7 @@ const QueryView: React.FC<QueryViewProps> = ({ section }) => {
             />
           )}
         </ResizablePanelGroup>
+        <GettingStartedDialog open={showGettingStartedDialog} onOpenChange={setShowGettingStartedDialog} />
       </QueryDataDispatchContext.Provider>
     </QueryDataContext.Provider>
   );

@@ -94,7 +94,7 @@ const AccountCreate: React.FC = () => {
         void revalidator.revalidate();
 
         createStatusToast.dismiss();
-        void navigate(`/${accountId}/settings`);
+        void navigate(`/${accountId}`);
       })(event);
     },
     [form, navigate, revalidator, statusToast],

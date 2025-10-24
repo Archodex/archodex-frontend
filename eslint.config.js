@@ -48,6 +48,8 @@ export default tseslint.config(
       // Enable its recommended rules
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
+      // Disable prop-types as we use TypeScript for type checking
+      'react/prop-types': 'off',
     },
   },
 );

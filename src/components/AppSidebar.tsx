@@ -47,7 +47,7 @@ const menuItems = (items: MenuItem[], accountId: string | undefined, setOpenMobi
       <SidebarMenuItem key={item.title} ref={item.ref}>
         <SidebarMenuButton
           asChild
-          isActive={window.location.pathname.includes(item.url)}
+          isActive={window.location.pathname.startsWith(url)}
           className={[
             'min-h-fit text-md [&>svg]:size-5 [&>svg]:text-primary',
             disabled ? 'text-muted-foreground pointer-events-none cursor-default' : '',

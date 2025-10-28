@@ -58,7 +58,7 @@ const AccountSwitcher: React.FC = () => {
           {Object.keys(accounts).map((accountId) => (
             <DropdownMenuItem
               key={accountId}
-              className="justify-between"
+              className="justify-between cursor-pointer"
               onClick={() => {
                 switchAccount(accountId);
               }}
@@ -70,6 +70,7 @@ const AccountSwitcher: React.FC = () => {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem
+          className="cursor-pointer"
           onClick={() => {
             if (!currentAccountId) {
               throw new Error('No current account to navigate to settings for?');
@@ -83,6 +84,7 @@ const AccountSwitcher: React.FC = () => {
           Account Settings
         </DropdownMenuItem>
         <DropdownMenuItem
+          className="cursor-pointer"
           onClick={() => {
             void navigate('/create_account');
           }}

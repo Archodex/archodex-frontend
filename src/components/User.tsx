@@ -26,11 +26,11 @@ const User: React.FC = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>{userEmail()}</DropdownMenuLabel>
-          <DropdownMenuItem onClick={() => void navigate('/user/settings')}>
+          <DropdownMenuItem className="cursor-pointer" onClick={() => void navigate('/user/settings')}>
             <UserCog className="text-primary" />
             <span>User Settings</span>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => void navigate('/logout')}>
+          <DropdownMenuItem className="cursor-pointer" onClick={() => void navigate('/logout')}>
             <LogOut className="text-primary" />
             <span>Logout</span>
           </DropdownMenuItem>

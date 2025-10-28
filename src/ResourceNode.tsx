@@ -313,15 +313,22 @@ const ResourceNode = ({ id, selected, data }: NodeProps<ResourceNode>) => {
                     </Badge>
                   </TooltipTrigger>
                   <TooltipContent
-                    className={[popoverColor(env.colorIndex, env.inheritedFrom !== undefined), 'text-center'].join(' ')}
+                    className={[
+                      popoverColor(env.colorIndex, env.inheritedFrom !== undefined),
+                      'text-center',
+                      'text-black',
+                    ].join(' ')}
                   >
-                    <p className="font-semibold">{env.name}</p>
+                    <span className="font-semibold">{env.name}</span>
                     {env.inheritedFrom !== undefined && (
-                      <p className="text-muted-foreground">
+                      <>
                         <br />
-                        Inherited from {env.inheritedFrom.at(-1)?.type} &quot;
-                        {env.inheritedFrom.at(-1)?.id}&quot;
-                      </p>
+                        <br />
+                        <span>
+                          Inherited from {env.inheritedFrom.at(-1)?.type} &quot;
+                          {env.inheritedFrom.at(-1)?.id}&quot;
+                        </span>
+                      </>
                     )}
                   </TooltipContent>
                 </Tooltip>

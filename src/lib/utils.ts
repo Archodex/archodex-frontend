@@ -63,6 +63,8 @@ export const labelForResourceType = (type: string | undefined) => {
   switch (type) {
     case 'Secret Value':
       return 'Secret Value Hash';
+    case 'Blob':
+      return 'File';
     default:
       return type;
   }
@@ -324,7 +326,7 @@ export function accountsUrl({
   region ??= 'us-west-2';
 
   if (location.hostname === 'localhost') {
-    const archodexDomain = (import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com';
+    const archodexDomain = import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com';
     const globalEndpoint =
       (import.meta.env.VITE_ARCHODEX_ACCOUNTS_BACKEND_ENDPOINT as string | undefined) ??
       `https://api.us-west-2.${archodexDomain}`;

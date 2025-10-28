@@ -38,8 +38,7 @@ export class AccountsLoaderData {
     let endpoint = account.endpoint;
     if (
       location.hostname === 'localhost' &&
-      account.endpoint ===
-        `https://api.us-west-2.${(import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com'}` &&
+      account.endpoint === `https://api.us-west-2.${import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com'}` &&
       import.meta.env.VITE_ARCHODEX_ACCOUNTS_BACKEND_ENDPOINT
     ) {
       endpoint = import.meta.env.VITE_ARCHODEX_ACCOUNTS_BACKEND_ENDPOINT as string;

@@ -173,7 +173,7 @@ const AccountCreate: React.FC = () => {
               <p>
                 Self-hosted accounts are stored in an Archodex Service environment you maintain. To get started, see the{' '}
                 <a
-                  href={`https://${(import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com'}/docs/self-host`}
+                  href={`https://${import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com'}/docs/self-host`}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -212,7 +212,7 @@ const AccountCreate: React.FC = () => {
               <p>
                 To learn more, visit our{' '}
                 <a
-                  href={`https://${(import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com'}/docs/agent/logging-only`}
+                  href={`https://${import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com'}/docs/agent/logging-only`}
                   target="_blank"
                   rel="noreferrer"
                 >

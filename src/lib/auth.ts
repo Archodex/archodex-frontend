@@ -2,12 +2,11 @@ import { LoaderFunction, redirect } from 'react-router';
 import { isPlayground } from './utils';
 
 const ARCHODEX_COM_USER_POOL_CLIENT_ID = '1a5vsre47o6pa39p3p81igfken';
-const USER_POOL_CLIENT_ID =
-  (import.meta.env.VITE_USER_POOL_CLIENT_ID as string | undefined) ?? ARCHODEX_COM_USER_POOL_CLIENT_ID;
+const USER_POOL_CLIENT_ID = import.meta.env.VITE_USER_POOL_CLIENT_ID ?? ARCHODEX_COM_USER_POOL_CLIENT_ID;
 
 const archodexDomain = () =>
   location.hostname === 'localhost'
-    ? ((import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com')
+    ? (import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com')
     : location.hostname.replace(/^app\./, '');
 
 const authDomain = () => `auth.${archodexDomain()}`;

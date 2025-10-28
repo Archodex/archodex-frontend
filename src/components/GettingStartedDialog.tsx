@@ -20,7 +20,7 @@ const GettingStartedDialog: React.FC<DialogProps> = (props) => {
           <p>
             We haven&apos;t observed any resources yet. Check out our{' '}
             <a
-              href={`https://${(import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com'}/docs/getting-started#using-the-agent`}
+              href={`https://${import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com'}/docs/getting-started#using-the-agent`}
               target="_blank"
               rel="noreferrer"
             >

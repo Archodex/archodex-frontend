@@ -963,7 +963,7 @@
         { "type": "Namespace", "id": "vault" },
         { "type": "Service", "id": "vault" },
         { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-        { "type": "Secrets Engine Mount", "id": "secret" },
+        { "type": "Secrets Engine Mount", "id": "vault" },
         { "type": "Secret", "id": "prod/sendgrid" }
       ],
       "environments": ["prod"],
@@ -976,7 +976,7 @@
         { "type": "Namespace", "id": "vault" },
         { "type": "Service", "id": "vault" },
         { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-        { "type": "Secrets Engine Mount", "id": "secret" },
+        { "type": "Secrets Engine Mount", "id": "vault" },
         { "type": "Secret", "id": "prod/stripe" }
       ],
       "environments": ["prod"],
@@ -989,7 +989,7 @@
         { "type": "Namespace", "id": "vault" },
         { "type": "Service", "id": "vault" },
         { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-        { "type": "Secrets Engine Mount", "id": "secret" },
+        { "type": "Secrets Engine Mount", "id": "vault" },
         { "type": "Secret", "id": "qa/stripe" }
       ],
       "environments": ["qa"],
@@ -1002,7 +1002,7 @@
         { "type": "Namespace", "id": "vault" },
         { "type": "Service", "id": "vault" },
         { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-        { "type": "Secrets Engine Mount", "id": "secret" }
+        { "type": "Secrets Engine Mount", "id": "vault" }
       ],
       "first_seen_at": "2025-06-02T16:40:53.731277343Z",
       "last_seen_at": "2025-06-20T00:15:12.361384217Z"
@@ -1494,7 +1494,7 @@
         { "type": "Namespace", "id": "vault" },
         { "type": "Service", "id": "vault" },
         { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-        { "type": "Secrets Engine Mount", "id": "secret" },
+        { "type": "Secrets Engine Mount", "id": "vault" },
         { "type": "Secret", "id": "qa/stripe" }
       ],
       "type": "Held",
@@ -1517,7 +1517,7 @@
               { "type": "Namespace", "id": "vault" },
               { "type": "Service", "id": "vault" },
               { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secrets Engine Mount", "id": "vault" },
               { "type": "Secret", "id": "qa/stripe" }
             ],
             "event": "Read"
@@ -1613,7 +1613,7 @@
         { "type": "Namespace", "id": "vault" },
         { "type": "Service", "id": "vault" },
         { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-        { "type": "Secrets Engine Mount", "id": "secret" },
+        { "type": "Secrets Engine Mount", "id": "vault" },
         { "type": "Secret", "id": "prod/sendgrid" }
       ],
       "type": "Held",
@@ -1636,7 +1636,7 @@
               { "type": "Namespace", "id": "vault" },
               { "type": "Service", "id": "vault" },
               { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secrets Engine Mount", "id": "vault" },
               { "type": "Secret", "id": "prod/sendgrid" }
             ],
             "event": "Read"
@@ -1657,7 +1657,7 @@
               { "type": "Namespace", "id": "vault" },
               { "type": "Service", "id": "vault" },
               { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secrets Engine Mount", "id": "vault" },
               { "type": "Secret", "id": "prod/sendgrid" }
             ],
             "event": "Read"
@@ -1827,7 +1827,7 @@
               { "type": "Namespace", "id": "vault" },
               { "type": "Service", "id": "vault" },
               { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secrets Engine Mount", "id": "vault" },
               { "type": "Secret", "id": "prod/sendgrid" }
             ],
             "event": "Read"
@@ -1970,7 +1970,7 @@
               { "type": "Namespace", "id": "vault" },
               { "type": "Service", "id": "vault" },
               { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secrets Engine Mount", "id": "vault" },
               { "type": "Secret", "id": "qa/stripe" }
             ],
             "event": "Read"
@@ -2275,7 +2275,7 @@
               { "type": "Namespace", "id": "vault" },
               { "type": "Service", "id": "vault" },
               { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secrets Engine Mount", "id": "vault" },
               { "type": "Secret", "id": "prod/sendgrid" }
             ],
             "event": "Read"
@@ -2312,7 +2312,7 @@
               { "type": "Namespace", "id": "vault" },
               { "type": "Service", "id": "vault" },
               { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secrets Engine Mount", "id": "vault" },
               { "type": "Secret", "id": "prod/stripe" }
             ],
             "event": "Read"
@@ -2865,7 +2865,7 @@
         { "type": "Namespace", "id": "vault" },
         { "type": "Service", "id": "vault" },
         { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-        { "type": "Secrets Engine Mount", "id": "secret" },
+        { "type": "Secrets Engine Mount", "id": "vault" },
         { "type": "Secret", "id": "prod/stripe" }
       ],
       "type": "Held",
@@ -2888,7 +2888,7 @@
               { "type": "Namespace", "id": "vault" },
               { "type": "Service", "id": "vault" },
               { "type": "HashiCorp Vault Service", "id": "vault.vault" },
-              { "type": "Secrets Engine Mount", "id": "secret" },
+              { "type": "Secrets Engine Mount", "id": "vault" },
               { "type": "Secret", "id": "prod/stripe" }
             ],
             "event": "Read"

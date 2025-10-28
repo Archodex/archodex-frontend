@@ -5,6 +5,7 @@ import { Tutorial, TutorialDialogStepDefinition, TutorialSelectionDialogStepDefi
 import { TutorialCallbacksState } from './CallbacksContext';
 import { TutorialStepCommon } from './Context';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
+import { redirectToAuth } from '@/lib/auth';
 
 export type TutorialDialogStep = TutorialStepCommon &
   (TutorialDialogStepDefinition | TutorialSelectionDialogStepDefinition);
@@ -49,8 +50,13 @@ const TutorialDialog: React.FC<TutorialDialogProps> = ({
           </Button>
         )}
         {showFinishButton && (
-          <Button autoFocus onClick={tutorialCallbacks.closeTutorial}>
-            Close Tutorial
+          <Button
+            autoFocus
+            onClick={() => {
+              redirectToAuth({ signup: true });
+            }}
+          >
+            Get Started
           </Button>
         )}
       </DialogFooter>

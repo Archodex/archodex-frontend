@@ -9,8 +9,7 @@
 		},
 		{
 			"type": "shell",
-			"command": "npm",
-			"args": ["run", "dev"],
+			"command": "set -a; source ${workspaceFolder}/.vscode/.env; npm run dev",
 			"problemMatcher": [],
 			"label": "npm: dev (playground)",
 			"options": {

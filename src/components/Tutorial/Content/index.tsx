@@ -226,9 +226,43 @@ const hardcodedSecretsTutorialSteps: TutorialStepDefinition[] = [
     lightbox: true,
   },
   {
+    type: 'dialog',
+    header: { title: 'Planning with Full Knowledge' },
+    content: (
+      <>
+        <p>
+          With this knowledge from Archodex you build a plan to fix the hardcoding of the Stripe API key in the{' '}
+          <b>subscriptions</b> service. As a good practice, you also plan to rotate the secret:
+        </p>
+        <ol className="ml-4 *:list-decimal list-inside space-y-2">
+          <li>
+            Update the <b>subscriptions</b> service to retrieve the Stripe API key from the secrets vault
+          </li>
+          <li>Generate a new Stripe API key</li>
+          <li>
+            Update the <b>prod/stripe</b> secret in the secrets vault with the new key
+          </li>
+          <li>
+            Re-deploy the <b>subscriptions</b> and <b>payments</b> services to pick up the new secret value from the
+            secrets vault
+          </li>
+          <li>Revoke the old Stripe API key</li>
+        </ol>
+      </>
+    ),
+  },
+  {
     type: 'dialog' as const,
     header: { title: 'Congrats!' },
-    content: <p>You’ve finished this Archodex tutorial. Feel free to continue poking around :).</p>,
+    content: (
+      <>
+        <p>Your plan worked perfectly! You successfully rotated a hardcoded secret without an outage.</p>
+        <p>
+          You’ve finished this Archodex tutorial. Feel free to continue poking around. Or, if you like what you see,
+          click the button below to get started!
+        </p>
+      </>
+    ),
   },
 ];
 
@@ -260,7 +294,7 @@ const crossEnvironmentSecretsTutorialSteps: TutorialStepDefinition[] = [
     lightbox: true,
     stateUpdate: ({ queryDataDispatch }, revert) => {
       const sendGridSecretId =
-        '::Kubernetes Cluster::d77d838b-bdca-419f-9a55-71d8a8c34439::Namespace::vault::Service::vault::HashiCorp Vault Service::vault.vault::Secrets Engine Mount::secret::Secret::prod/sendgrid';
+        '::Kubernetes Cluster::d77d838b-bdca-419f-9a55-71d8a8c34439::Namespace::vault::Service::vault::HashiCorp Vault Service::vault.vault::Secrets Engine Mount::vault::Secret::prod/sendgrid';
       if (revert) {
         queryDataDispatch({ action: QueryDataActions.DeselectResource, resourceId: sendGridSecretId });
       } else {
@@ -315,7 +349,7 @@ const crossEnvironmentSecretsTutorialSteps: TutorialStepDefinition[] = [
         { type: 'Namespace', id: 'vault' },
         { type: 'Service', id: 'vault' },
         { type: 'HashiCorp Vault Service', id: 'vault.vault' },
-        { type: 'Secrets Engine Mount', id: 'secret' },
+        { type: 'Secrets Engine Mount', id: 'vault' },
         { type: 'Secret', id: 'prod/sendgrid' },
       ];
 
@@ -343,7 +377,7 @@ const crossEnvironmentSecretsTutorialSteps: TutorialStepDefinition[] = [
     content: (
       <>
         <p>
-          Oh! Tagging the SendGrid Secret with the <i>prod</i> environment created a new issue.
+          Oh! Tagging the SendGrid Secret with the <b>prod</b> environment created a new issue.
         </p>
         <p>Click on this new alert to learn more.</p>
       </>
@@ -359,12 +393,8 @@ const crossEnvironmentSecretsTutorialSteps: TutorialStepDefinition[] = [
     content: (
       <>
         <p>
-          Ah... here is our problem that likely led to test emails being sent to our customers. Our <i>qa</i>{' '}
-          environment is using production SendGrid credentials!
-        </p>
-        <p>
-          We will prevent this from happening again by mocking out the SendGrid API calls in our <i>qa</i> environment
-          💡.
+          Ah... here is what led to test emails being sent to our customers. Our <b>qa</b> environment is using
+          production SendGrid credentials!
         </p>
       </>
     ),
@@ -373,8 +403,28 @@ const crossEnvironmentSecretsTutorialSteps: TutorialStepDefinition[] = [
   },
   {
     type: 'dialog',
+    header: { title: 'Planning with Full Knowledge' },
+    content: (
+      <>
+        <p>
+          With this knowledge from Archodex you build a plan to stop using the production SendGrid API key in our{' '}
+          <b>qa</b> environment by mocking out the API calls in our tests.
+        </p>
+      </>
+    ),
+  },
+  {
+    type: 'dialog',
     header: { title: 'Congrats!' },
-    content: <p>You’ve finished this Archodex tutorial. Feel free to continue poking around :).</p>,
+    content: (
+      <>
+        <p>Your plan worked perfectly! Customers are no longer receiving scary test emails.</p>
+        <p>
+          You’ve finished this Archodex tutorial. Feel free to continue poking around. Or, if you like what you see,
+          click the button below to get started!
+        </p>
+      </>
+    ),
   },
 ];
 

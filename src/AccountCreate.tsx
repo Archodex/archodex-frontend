@@ -27,7 +27,7 @@ const SelfHostedCreateAccountSchema = z.object({ endpoint: z.string().url() });
 type SelfHostedCreateAccountSchema = z.infer<typeof SelfHostedCreateAccountSchema>;
 
 const AccountCreate: React.FC = () => {
-  const [formId, setFormId] = useState<'managed' | 'self-hosted'>('managed');
+  const [formId, setFormId] = useState<'managed' | 'self-hosted' | 'logging-only'>('managed');
 
   const managedForm = useForm<ManagedCreateAccountSchema>({
     resolver: zodResolver(ManagedCreateAccountSchema),
@@ -94,7 +94,7 @@ const AccountCreate: React.FC = () => {
         void revalidator.revalidate();
 
         createStatusToast.dismiss();
-        void navigate(`/${accountId}/settings`);
+        void navigate(`/${accountId}`);
       })(event);
     },
     [form, navigate, revalidator, statusToast],
@@ -111,7 +111,7 @@ const AccountCreate: React.FC = () => {
           <Tabs
             value={formId}
             onValueChange={(v) => {
-              if (v !== 'managed' && v !== 'self-hosted') {
+              if (v !== 'managed' && v !== 'self-hosted' && v !== 'logging-only') {
                 throw new Error('Invalid account creation form tab value');
               }
 
@@ -119,17 +119,24 @@ const AccountCreate: React.FC = () => {
               setForm(v === 'managed' ? managedForm : selfHostedForm);
             }}
           >
-            <TabsList className="flex self-center">
+            <TabsList className="flex mb-6 self-center gap-4">
               <TabsTrigger value="managed" disabled={formDisabled}>
-                Archodex.com Managed Account
+                Managed Account
               </TabsTrigger>
               <TabsTrigger value="self-hosted" disabled={formDisabled}>
                 Self-Hosted Account
               </TabsTrigger>
+              <TabsTrigger value="logging-only" disabled={formDisabled}>
+                Logging-Only
+              </TabsTrigger>
             </TabsList>
             <TabsContent value="managed">
+              <p>
+                Archodex-managed accounts process and store your data in a per-account isolated database in a locality
+                of your choice. Your data will never leave your chosen locality.
+              </p>
               <Form {...managedForm}>
-                <form id="managed" className="space-y-8" onSubmit={onSubmit}>
+                <form id="managed" onSubmit={onSubmit}>
                   <FormField
                     control={managedForm.control}
                     name="region"
@@ -163,8 +170,19 @@ const AccountCreate: React.FC = () => {
               </Form>
             </TabsContent>
             <TabsContent value="self-hosted">
+              <p>
+                Self-hosted accounts are stored in an Archodex Service environment you maintain. To get started, see the{' '}
+                <a
+                  href={`https://${(import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com'}/docs/self-host`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Self-Host Documentation
+                </a>
+                .
+              </p>
               <Form {...selfHostedForm}>
-                <form id="self-hosted" className="space-y-8" onSubmit={onSubmit}>
+                <form id="self-hosted" onSubmit={onSubmit}>
                   <FormField
                     control={selfHostedForm.control}
                     name="endpoint"
@@ -185,18 +203,38 @@ const AccountCreate: React.FC = () => {
                 </form>
               </Form>
             </TabsContent>
+            <TabsContent value="logging-only">
+              <p>
+                The Archodex Agent can be used in <i>logging-only</i> mode. This enables using Archodex without worrying
+                where your data may be sent, though the data won’t be aggregated across contexts, viewable in the
+                Archodex dashboard, or analyzed for issues.
+              </p>
+              <p>
+                To learn more, visit our{' '}
+                <a
+                  href={`https://${(import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com'}/docs/agent/logging-only`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Logging-Only documentation
+                </a>
+                .
+              </p>
+            </TabsContent>
           </Tabs>
         </CardContent>
-        <CardFooter>
-          <Button
-            type="submit"
-            form={formId}
-            className="text-white dark:text-black"
-            disabled={form.formState.disabled || formDisabled}
-          >
-            Create Account
-          </Button>
-        </CardFooter>
+        {formId !== 'logging-only' && (
+          <CardFooter>
+            <Button
+              type="submit"
+              form={formId}
+              className="text-white dark:text-black"
+              disabled={form.formState.disabled || formDisabled}
+            >
+              Create Account
+            </Button>
+          </CardFooter>
+        )}
       </Card>
     </div>
   );

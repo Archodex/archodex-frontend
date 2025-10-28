@@ -49,7 +49,7 @@ const TutorialElement: React.FC = () => {
     return (
       <Button
         // Default bg has a hover mixin with transparency
-        className="fixed z-40 bottom-10 right-10 hover:bg-primary"
+        className="fixed z-40 bottom-10 right-10 hover:bg-primary cursor-pointer"
         onClick={atEnd ? tutorialCallbacksContext.restartTutorial : tutorialCallbacksContext.resumeTutorial}
       >
         {atEnd ? 'Restart Tutorial' : 'Resume Tutorial'}

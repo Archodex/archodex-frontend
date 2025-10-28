@@ -9,7 +9,7 @@ const Dashboard = () => {
   const outletContext = useOutletContext();
 
   return (
-    <SidebarProvider style={{ '--sidebar-width': '160px' } as React.CSSProperties}>
+    <SidebarProvider style={{ '--sidebar-width': '180px' } as React.CSSProperties}>
       <AppSidebar />
       <main className="overflow-auto flex-1 max-h-screen">
         <div className="w-full h-full flex flex-col">

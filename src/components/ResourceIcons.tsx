@@ -37,9 +37,7 @@ const ResourceIcons: React.FC<ResourceIconsProps> = ({
             />
           </TooltipTrigger>
           <TooltipContent className="z-1000">
-            <p>
-              {labelForResourceType(id[i].type)}: {id[i].id}
-            </p>
+            {labelForResourceType(id[i].type)}: {id[i].id}
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>,
@@ -60,9 +58,7 @@ const ResourceIcons: React.FC<ResourceIconsProps> = ({
           />
         </TooltipTrigger>
         <TooltipContent className="z-1000">
-          <p>
-            {labelForResourceType(id.at(-1)?.type)}: {id.at(-1)?.id}
-          </p>
+          {labelForResourceType(id.at(-1)?.type)}: {id.at(-1)?.id}
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>,

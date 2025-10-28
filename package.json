@@ -43,6 +43,7 @@
     "date-fns": "^4.1.0",
     "elkjs": "^0.9.3",
     "lucide-react": "^0.451.0",
+    "posthog-js": "^1.281.0",
     "react": "19.1.0",
     "react-day-picker": "^9.7.0",
     "react-dom": "19.1.0",

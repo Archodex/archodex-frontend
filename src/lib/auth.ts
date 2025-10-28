@@ -1,5 +1,6 @@
 import { LoaderFunction, redirect } from 'react-router';
 import { isPlayground } from './utils';
+import posthog from 'posthog-js';
 
 const ARCHODEX_COM_USER_POOL_CLIENT_ID = '1a5vsre47o6pa39p3p81igfken';
 const USER_POOL_CLIENT_ID = import.meta.env.VITE_USER_POOL_CLIENT_ID ?? ARCHODEX_COM_USER_POOL_CLIENT_ID;
@@ -74,6 +75,7 @@ export const isAuthenticated = new Promise<boolean>((resolve) => {
         switch (data.type) {
           case 'authSuccess':
             _userEmail = data.userEmail;
+            posthog.identify(data.userId);
             authenticatedResolver(true);
             break;
 
@@ -160,6 +162,7 @@ export const idpResponseLoader: LoaderFunction = async () => {
       switch (data.type) {
         case 'authSuccess':
           _userEmail = data.userEmail;
+          posthog.identify(data.userId);
           resolve();
           break;
 
@@ -257,6 +260,8 @@ export const passkeyResponseLoader: LoaderFunction = () => {
 };
 
 export async function logOutLoader() {
+  posthog.reset();
+
   const serviceWorker = (await navigator.serviceWorker.ready).active;
   if (serviceWorker) {
     // This will synchronously clear the auth service worker's tokens and asynchronously revoke the refresh token.

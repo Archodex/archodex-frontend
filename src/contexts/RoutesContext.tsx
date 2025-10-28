@@ -1,4 +1,5 @@
-import React, { createContext, useMemo } from 'react';
+import React, { createContext, useEffect, useMemo } from 'react';
+import posthog from 'posthog-js';
 import {
   createRoutesFromElements,
   Navigate,
@@ -8,6 +9,7 @@ import {
   ShouldRevalidateFunction,
   UIMatch,
   useMatches,
+  useParams,
 } from 'react-router';
 import { isPlayground } from '@/lib/utils';
 import { idpResponseLoader, logOutLoader, passkeyResponseLoader, redirectToAuth } from '@/lib/auth';
@@ -27,6 +29,13 @@ import { settingsLoader } from '@/settingsLoader';
 const Layout: React.FC = () => {
   const matches = useMatches() as UIMatch<unknown, { title?: string } | undefined>[];
   const title = useMemo(() => matches.reverse().find((match) => match.handle?.title)?.handle?.title, [matches]);
+  const params = useParams();
+
+  useEffect(() => {
+    if (params.accountId) {
+      posthog.group('account', params.accountId);
+    }
+  }, [params.accountId]);
 
   const prefix = isPlayground ? 'Archodex Playground' : 'Archodex Dashboard';
 

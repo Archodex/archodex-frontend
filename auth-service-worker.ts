@@ -11,6 +11,7 @@ interface AuthTokens {
   accessTokenExpiration: Date;
   refreshToken: string;
   userEmail: string;
+  userId: string;
   endpoints: Set<string>;
 }
 
@@ -23,12 +24,12 @@ interface BrowserClient extends Client {
   postMessage(message: AuthResponseMessage, options?: StructuredSerializeOptions): void;
 }
 
-const jwtClaims = (token: string): { email?: string; exp: number } => {
+const jwtClaims = (token: string): { sub: string; email?: string; exp: number } => {
   const parts = token.split('.');
   if (parts.length !== 3) {
     throw new Error('Invalid JWT token');
   }
-  const payload = JSON.parse(atob(parts[1])) as { email: string; exp: number };
+  const payload = JSON.parse(atob(parts[1])) as { sub: string; email: string; exp: number };
   if (typeof payload.exp !== 'number') {
     throw new Error('Invalid JWT payload');
   }
@@ -68,7 +69,7 @@ self.addEventListener('message', (event: ExtendableMessageEvent) => {
       case 'authCheck':
         if (tokens) {
           console.debug(`Received authCheck message while authenticated as ${tokens.userEmail}`);
-          client.postMessage({ type: 'authSuccess', userEmail: tokens.userEmail });
+          client.postMessage({ type: 'authSuccess', userEmail: tokens.userEmail, userId: tokens.userId });
         } else {
           console.debug('Received authCheck message while not authenticated');
           client.postMessage({ type: 'notAuthenticated' });
@@ -138,6 +139,7 @@ const authenticate = async (client: BrowserClient, authCodeMessage: AuthCodeMess
     accessTokenExpiration: new Date(claims.exp * 1000),
     refreshToken,
     userEmail: claims.email,
+    userId: claims.sub,
     endpoints: new Set([authCodeMessage.globalEndpoint]),
   };
 
@@ -145,7 +147,7 @@ const authenticate = async (client: BrowserClient, authCodeMessage: AuthCodeMess
     `Successfully generated access token in auth service worker for ${tokens.userEmail} (expiration: ${tokens.accessTokenExpiration.toISOString()})`,
   );
 
-  client.postMessage({ type: 'authSuccess', userEmail: tokens.userEmail });
+  client.postMessage({ type: 'authSuccess', userEmail: tokens.userEmail, userId: tokens.userId });
 };
 
 self.addEventListener('fetch', (event: FetchEvent) => {

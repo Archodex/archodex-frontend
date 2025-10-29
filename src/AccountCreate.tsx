@@ -226,7 +226,7 @@ const AccountCreate: React.FC = () => {
               <p>
                 To learn more, visit our{' '}
                 <a
-                  href={`https://${import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com'}/docs/agent/logging-only`}
+                  href={`https://${import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com'}/docs/getting-started/logging-only-mode`}
                   target="_blank"
                   rel="noreferrer"
                 >

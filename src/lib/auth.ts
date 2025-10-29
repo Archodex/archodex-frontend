@@ -8,7 +8,7 @@ const USER_POOL_CLIENT_ID = import.meta.env.VITE_USER_POOL_CLIENT_ID ?? ARCHODEX
 const archodexDomain = () =>
   location.hostname === 'localhost'
     ? (import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com')
-    : location.hostname.replace(/^app\./, '');
+    : location.hostname.replace(/^(?:app|play)\./, '');
 
 const authDomain = () => `auth.${archodexDomain()}`;
 
@@ -22,11 +22,13 @@ export function redirectToAuth(options?: { signup?: boolean }) {
   sessionStorage.setItem('authHistoryLength', history.length.toString());
   sessionStorage.setItem('authLastPathname', location.pathname);
 
+  const redirect_uri = location.origin.replace(/play\./, 'app.') + '/oauth2/idpresponse';
+
   const authUrl = new URL(path, `https://${authDomain()}`);
   authUrl.searchParams.set('response_type', 'code');
   authUrl.searchParams.set('client_id', USER_POOL_CLIENT_ID);
   authUrl.searchParams.set('state', state);
-  authUrl.searchParams.set('redirect_uri', `${location.origin}/oauth2/idpresponse`);
+  authUrl.searchParams.set('redirect_uri', redirect_uri);
 
   location.href = authUrl.toString();
 }

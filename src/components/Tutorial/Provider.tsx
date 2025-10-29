@@ -5,6 +5,7 @@ import TutorialCallbacksContext, { ElementRef, OpenTagEnvironmentDialog } from '
 import TutorialContext, { TutorialState, TutorialStep } from './Context';
 import tutorialRefDefinitions, { tutorialStateEmptyRefs, TutorialRefNames, tutorialRefNames } from './refs';
 import { QueryDataActions, QueryDataEvent } from '@/hooks/useQueryData';
+import posthog from 'posthog-js';
 
 const TutorialProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [tutorialContext, dispatch] = useReducer(tutorialReducer, initialTutorialContext());
@@ -229,6 +230,8 @@ const tutorialReducer: React.Reducer<TutorialState, TutorialReducerArg> = (state
       sessionStorage.setItem('tutorialName', tutorialName);
       sessionStorage.setItem('tutorialStepIndex', stepIndex.toString());
 
+      posthog.capture('tutorial_reverted', { tutorialName, stepIndex });
+
       const newState: TutorialState = {
         ...state,
         tutorialName,
@@ -248,12 +251,11 @@ const tutorialReducer: React.Reducer<TutorialState, TutorialReducerArg> = (state
       sessionStorage.setItem('tutorialName', tutorialName);
       sessionStorage.setItem('tutorialStepIndex', nextStepIndex.toString());
 
-      return {
-        ...state,
-        stepIndex: nextStepIndex,
-        currentStep: getNextStep(state.tutorialName, nextStepIndex),
-        atEnd: nextStepIndex >= tutorialSteps.length - 1 && tutorialName !== Tutorial.Intro,
-      };
+      const atEnd = nextStepIndex >= tutorialSteps.length - 1 && tutorialName !== Tutorial.Intro;
+
+      posthog.capture('tutorial_advanced', { tutorialName, nextStepIndex, atEnd });
+
+      return { ...state, stepIndex: nextStepIndex, currentStep: getNextStep(state.tutorialName, nextStepIndex), atEnd };
     }
 
     case 'selectTutorial': {
@@ -262,6 +264,8 @@ const tutorialReducer: React.Reducer<TutorialState, TutorialReducerArg> = (state
 
       sessionStorage.setItem('tutorialName', tutorialName);
       sessionStorage.setItem('tutorialStepIndex', stepIndex.toString());
+
+      posthog.capture('tutorial_selected', { tutorialName });
 
       return {
         ...state,
@@ -275,6 +279,8 @@ const tutorialReducer: React.Reducer<TutorialState, TutorialReducerArg> = (state
 
     case 'closeTutorial':
       sessionStorage.setItem('tutorialClosed', 'true');
+
+      posthog.capture('tutorial_closed', { tutorialName, stepIndex: state.stepIndex });
 
       return {
         ...state,
@@ -293,6 +299,8 @@ const tutorialReducer: React.Reducer<TutorialState, TutorialReducerArg> = (state
 
       sessionStorage.removeItem('tutorialClosed');
 
+      posthog.capture('tutorial_resumed', { tutorialName: newState.tutorialName, stepIndex: newState.stepIndex });
+
       for (const step of tutorialSteps.slice(0, state.stepIndex)) {
         step.stateUpdate?.(stateCallbacks(newState), false);
       }
@@ -304,6 +312,8 @@ const tutorialReducer: React.Reducer<TutorialState, TutorialReducerArg> = (state
       sessionStorage.removeItem('tutorialClosed');
       sessionStorage.setItem('tutorialName', Tutorial.Intro);
       sessionStorage.setItem('tutorialStepIndex', '0');
+
+      posthog.capture('tutorial_restarted');
 
       return {
         ...state,

@@ -11,6 +11,7 @@ import { toast } from '@/hooks/use-toast';
 import { Skeleton } from './ui/skeleton';
 import { Copy } from 'lucide-react';
 import ReportApiKeyCreateFormState from './ReportApiKeyCreateFormState';
+import posthog from 'posthog-js';
 
 const REPORT_API_KEY_SKELETON_VALUE =
   'archodex_report_api_key_194387_CAESFWh0dHA6Ly9sb2NhbGhvc3Q6NTczMRoQ6SrmCoAK5tBO/R3hBDjq7yIMsiIlHuz4nZGcvuYDKhXfbUB6AcnMmyzNvn6+FbTrhkwiKRU=';
@@ -52,6 +53,8 @@ const ReportApiKeyCreateForm: React.FC<ReportApiKeyCreateFormProps> = ({
         });
 
         if (!res.ok) {
+          posthog.captureException(new Error(`Failed to create report API key: ${res.statusText}`));
+
           toast({ title: 'Failed to create report API key', duration: Infinity, variant: 'destructive' });
 
           return;
@@ -59,9 +62,12 @@ const ReportApiKeyCreateForm: React.FC<ReportApiKeyCreateFormProps> = ({
 
         const { report_api_key_value: reportKeyValue } = (await res.json()) as CreateReportAPIKeyResponse;
 
+        posthog.capture('report_api_key_created');
+
         setNewReportApiKeyValue(reportKeyValue);
         void revalidator.revalidate();
       } catch (err) {
+        posthog.captureException(err);
         console.error(`Failed to create report API key: ${String(err)}`);
         toast({ title: 'Failed to create report API key', duration: Infinity, variant: 'destructive' });
       }

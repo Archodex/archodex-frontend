@@ -18,6 +18,10 @@ export function edgeIdFromResourceIds(source: ResourceId, target: ResourceId) {
   return `${nodeIdFromResourceId(source)}-${nodeIdFromResourceId(target)}`;
 }
 
+export function typeIdFromResourceId(resourceId: ResourceId) {
+  return resourceId.map((part) => part.type).join('::');
+}
+
 const addNodeAndParents = (id: ResourceId, nodes: Record<string, Node<ResourceNodeData>>) => {
   const nodeId = nodeIdFromResourceId(id);
 

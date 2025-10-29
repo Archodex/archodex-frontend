@@ -2,6 +2,7 @@ import { AccountRoutesContext } from '@/AccountRoutes';
 import { Button } from '@/components/ui/button';
 import { toast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
+import posthog from 'posthog-js';
 import React, { useCallback, useState } from 'react';
 import { useOutletContext, useRevalidator } from 'react-router';
 
@@ -24,6 +25,8 @@ const InitializeAccount: React.FC = () => {
         body: JSON.stringify({ account_id: accountContext.account.id }),
       });
     } catch (error) {
+      posthog.captureException(error);
+
       console.error(`Failed to initialize account: ${String(error)}`);
       setStatusToast(
         toast({
@@ -53,6 +56,8 @@ const InitializeAccount: React.FC = () => {
         errorMessage = `${String(initializeResponse.status)} ${initializeResponse.statusText}`;
       }
 
+      posthog.captureException(new Error(`Account initialization failed: ${errorMessage}`));
+
       console.error(`Failed to initialize account: ${errorMessage}`);
 
       setStatusToast(
@@ -67,6 +72,8 @@ const InitializeAccount: React.FC = () => {
       setButtonDisabled(false);
       return;
     }
+
+    posthog.capture('account_initialized');
 
     void revalidator.revalidate();
   }, [accountContext, revalidator, statusToast]);

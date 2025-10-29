@@ -2,13 +2,20 @@ import type { DialogProps } from '@radix-ui/react-dialog';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { Link } from 'react-router';
 import ReportApiKeyCreateForm from './ReportApiKeyCreateForm';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReportApiKeyCreateFormState from './ReportApiKeyCreateFormState';
+import posthog from 'posthog-js';
 
 const GettingStartedDialog: React.FC<DialogProps> = (props) => {
   const [reportApiKeyCreateFormState, setReportApiKeyCreateFormState] = useState(
     ReportApiKeyCreateFormState.InputDescription,
   );
+
+  useEffect(() => {
+    if (props.open) {
+      posthog.capture('getting_started_dialog_shown');
+    }
+  }, [props.open]);
 
   return (
     <Dialog {...props}>

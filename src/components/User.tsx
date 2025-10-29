@@ -10,13 +10,20 @@ import {
 } from './ui/dropdown-menu';
 import { useNavigate } from 'react-router';
 import { userEmail } from '@/lib/auth';
+import posthog from 'posthog-js';
 
 const User: React.FC = () => {
   const navigate = useNavigate();
 
   return (
     <SidebarMenuItem>
-      <DropdownMenu>
+      <DropdownMenu
+        onOpenChange={(open) => {
+          if (open) {
+            posthog.capture('user_menu_opened');
+          }
+        }}
+      >
         <DropdownMenuTrigger asChild>
           <SidebarMenuButton className="py-1 text-xs min-h-fit data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
             <UserIcon className="size-5! text-primary" />

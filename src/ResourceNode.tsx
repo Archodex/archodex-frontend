@@ -1,7 +1,7 @@
 import { Handle, Position, XYPosition, type Node, type NodeProps } from '@xyflow/react';
 
 import ResourceIcons from './components/ResourceIcons';
-import { envColorByIndex, labelForResource, lucideIconUrl, mergeRefs } from './lib/utils';
+import { envColorByIndex, labelForResource, lucideIconUrl, mergeRefs, typeIdFromResourceId } from './lib/utils';
 import { AlertTriangle, Plus, X } from 'lucide-react';
 import { Badge } from './components/ui/badge';
 import { useCallback, useContext, useEffect, useState } from 'react';
@@ -15,6 +15,7 @@ import { QueryDataActions } from './hooks/useQueryData';
 import { useNavigate, useOutletContext } from 'react-router';
 import { AccountRoutesContext } from './AccountRoutes';
 import { toast } from './hooks/use-toast';
+import posthog from 'posthog-js';
 
 export interface ResourceEnvironmentData {
   name: string;
@@ -172,6 +173,8 @@ const ResourceNode = ({ id, selected, data }: NodeProps<ResourceNode>) => {
 
   const selectResourceIssues = useCallback(
     (data: ResourceNodeData) => {
+      posthog.capture('resource_node_issue_badge_clicked', { resource_type: typeIdFromResourceId(data.id) });
+
       if (!location.pathname.endsWith('/issues')) {
         void navigate('./issues', { replace: true });
       }
@@ -210,6 +213,7 @@ const ResourceNode = ({ id, selected, data }: NodeProps<ResourceNode>) => {
 
           if (!errorMessage) {
             toast({ title: 'Environments updated for resource' });
+            posthog.capture('resource_tagged_with_environment', { resource_type: typeIdFromResourceId(data.id) });
           } else {
             toast({
               title: 'Failed to update environments for resource',
@@ -217,6 +221,8 @@ const ResourceNode = ({ id, selected, data }: NodeProps<ResourceNode>) => {
               duration: Infinity,
               description: errorMessage,
             });
+
+            posthog.captureException(new Error(`Failed to tag resource with environment: ${errorMessage}`));
           }
         },
       });
@@ -238,6 +244,7 @@ const ResourceNode = ({ id, selected, data }: NodeProps<ResourceNode>) => {
 
           if (!errorMessage) {
             toast({ title: 'Environments updated for resource' });
+            posthog.capture('resource_untagged_from_environment', { resource_type: typeIdFromResourceId(data.id) });
           } else {
             toast({
               title: 'Failed to update environments for resource',
@@ -245,6 +252,8 @@ const ResourceNode = ({ id, selected, data }: NodeProps<ResourceNode>) => {
               duration: Infinity,
               description: errorMessage,
             });
+
+            posthog.captureException(new Error(`Failed to untag resource from environment: ${errorMessage}`));
           }
         },
       });
@@ -288,7 +297,15 @@ const ResourceNode = ({ id, selected, data }: NodeProps<ResourceNode>) => {
                 <Tooltip
                   open={envTooltipOpen === env.name}
                   onOpenChange={(open) => {
-                    if (open) setEnvTooltipOpen(env.name);
+                    if (open) {
+                      setEnvTooltipOpen(env.name);
+                      posthog.capture('resource_environment_tooltip_opened', {
+                        resource_type: typeIdFromResourceId(data.id),
+                        env_inherited_from_resource_type: env.inheritedFrom
+                          ? typeIdFromResourceId(env.inheritedFrom)
+                          : undefined,
+                      });
+                    }
                   }}
                 >
                   <TooltipTrigger asChild>
@@ -343,6 +360,11 @@ const ResourceNode = ({ id, selected, data }: NodeProps<ResourceNode>) => {
                 onOpenChange={(open) => {
                   setAddEnvPopoverOpen(open);
                   setAddEnvInput('');
+                  if (open) {
+                    posthog.capture('resource_add_environment_dialog_opened', {
+                      resource_type: typeIdFromResourceId(data.id),
+                    });
+                  }
                 }}
               >
                 <DialogTrigger asChild>

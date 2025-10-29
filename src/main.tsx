@@ -26,10 +26,12 @@ if ('serviceWorker' in navigator) {
     void navigator.serviceWorker.register(authServiceWorkerURL.href, { type: 'module' });
   } catch (err) {
     console.error('Error registering auth service worker: ', err);
+    posthog.captureException(err);
     document.body.innerHTML =
       '<h1 style="color: red;">Error registering auth service worker. See console for details.</h1>';
   }
 } else {
+  posthog.captureException(new Error('Service workers are not supported by this browser'));
   document.body.innerHTML =
     '<h1 style="color: red;">Service workers are not supported by this browser. Please use a modern browser such as Chrome, Firefox, Edge, or Safari.</h1>';
 }

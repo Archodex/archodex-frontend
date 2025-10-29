@@ -2,6 +2,7 @@ import { useNavigate, useRouteError } from 'react-router';
 import { redirectToAuth } from './lib/auth';
 import { useEffect } from 'react';
 import { toast } from './hooks/use-toast';
+import posthog from 'posthog-js';
 
 export class AuthError extends Error {
   constructor() {
@@ -47,6 +48,8 @@ function ErrorBoundary() {
     // We will redirect to the account settings page, see the useEffect above.
     return null;
   }
+
+  posthog.captureException(error);
 
   console.error(error);
 

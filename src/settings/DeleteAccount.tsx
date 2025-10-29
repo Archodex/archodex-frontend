@@ -16,6 +16,7 @@ import { accountsUrl } from '@/lib/utils';
 import { SettingsLoaderData } from '@/settingsLoader';
 import { DropdownMenuItem } from '@radix-ui/react-dropdown-menu';
 import { ChevronDown, Loader2 } from 'lucide-react';
+import posthog from 'posthog-js';
 import React, { useCallback, useState } from 'react';
 import { useLoaderData, useNavigate, useOutletContext, useRevalidator } from 'react-router';
 
@@ -41,6 +42,8 @@ const DeleteAccount: React.FC = () => {
             method: 'DELETE',
           });
         } catch (error) {
+          posthog.captureException(error);
+
           console.error(`Failed to delete account from self-hosted instance: ${String(error)}`);
           setStatusToast(
             toast({
@@ -69,6 +72,8 @@ const DeleteAccount: React.FC = () => {
             console.error(`Failed to deserialize delete account response from self-hosted instance: ${String(err)}`);
             errorMessage = `${String(deleteResponse.status)} ${deleteResponse.statusText}`;
           }
+
+          posthog.captureException(new Error(`Failed to delete account from self-hosted instance: ${errorMessage}`));
 
           console.error(`Failed to delete account from self-hosted instance: ${errorMessage}`);
 
@@ -100,6 +105,8 @@ const DeleteAccount: React.FC = () => {
       try {
         deleteResponse = await fetch(globalAccountsUrl, { method: 'DELETE' });
       } catch (error) {
+        posthog.captureException(error);
+
         console.error(`Failed to delete account from the global Archodex service: ${String(error)}`);
         setStatusToast(
           toast({
@@ -129,6 +136,10 @@ const DeleteAccount: React.FC = () => {
           errorMessage = `${String(deleteResponse.status)} ${deleteResponse.statusText}`;
         }
 
+        posthog.captureException(
+          new Error(`Failed to delete account from the global Archodex service: ${errorMessage}`),
+        );
+
         console.error(`Failed to delete account from the global Archodex service: ${errorMessage}`);
 
         setStatusToast(
@@ -143,6 +154,8 @@ const DeleteAccount: React.FC = () => {
         setDeleteDisabled(false);
         return;
       }
+
+      posthog.capture('account_deleted');
 
       invalidateAccountsLoaderData();
       void revalidator.revalidate();

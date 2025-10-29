@@ -234,6 +234,8 @@ export function redirectToPasskeyRegistration() {
 }
 
 export const passkeyResponseLoader: LoaderFunction = () => {
+  posthog.capture('passkey_registered');
+
   const historyLengthString = sessionStorage.getItem('authHistoryLength');
   const lastPathname = sessionStorage.getItem('authLastPathname');
   if (historyLengthString && lastPathname) {

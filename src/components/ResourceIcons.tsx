@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
-import { awsIconUrl, labelForResourceType, lucideIconUrl, simpleIconUrl } from '@/lib/utils';
+import { awsIconUrl, labelForResourceType, lucideIconUrl, simpleIconUrl, typeIdFromResourceId } from '@/lib/utils';
+import posthog from 'posthog-js';
 
 export interface ResourceIconsProps {
   id: ResourceId;
@@ -25,7 +26,13 @@ const ResourceIcons: React.FC<ResourceIconsProps> = ({
 
     icons.push(
       <TooltipProvider key={i}>
-        <Tooltip>
+        <Tooltip
+          onOpenChange={(open) => {
+            if (open) {
+              posthog.capture('resource_icon_tooltip_opened', { resource_type: typeIdFromResourceId(curResourceId) });
+            }
+          }}
+        >
           <TooltipTrigger asChild>
             <div
               className={iconClassName(highlighted)}
@@ -46,7 +53,13 @@ const ResourceIcons: React.FC<ResourceIconsProps> = ({
 
   icons.push(
     <TooltipProvider key={id.length - 1}>
-      <Tooltip>
+      <Tooltip
+        onOpenChange={(open) => {
+          if (open) {
+            posthog.capture('resource_icon_tooltip_opened', { resource_type: typeIdFromResourceId(id) });
+          }
+        }}
+      >
         <TooltipTrigger asChild>
           <div
             className={iconClassName(highlighted)}

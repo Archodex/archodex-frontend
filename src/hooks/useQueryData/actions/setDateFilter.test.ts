@@ -1,4 +1,4 @@
-import { describe, it, vi } from 'vitest';
+import { beforeEach, describe, it, vi } from 'vitest';
 import setDateFilter from './setDateFilter';
 import { QueryData, LayoutState, QueryDataActions } from '..';
 import type { SetDateFilterAction } from './setDateFilter';
@@ -18,6 +18,11 @@ Object.defineProperty(window, 'sessionStorage', { value: mockSessionStorage });
 // Resource ID constants
 const RESOURCE_1_ID: ResourceId = [{ type: 'test', id: '1' }];
 const NODE_1_ID = nodeIdFromResourceId(RESOURCE_1_ID);
+
+beforeEach(() => {
+  vi.mocked(initializer).mockClear();
+  mockSessionStorage.setItem.mockClear();
+});
 
 describe('setDateFilter', () => {
   const createMockState = (): QueryData => ({

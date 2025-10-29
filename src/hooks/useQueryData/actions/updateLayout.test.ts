@@ -20,7 +20,9 @@ const CHILD_RESOURCE_ID: ResourceId = [{ type: 'test', id: 'child' }];
 vi.mock('./fitView', () => ({ fitViewport: vi.fn() }));
 
 beforeEach(() => {
-  vi.mocked(fitViewport).mockReturnValue({ x: 100, y: 50, zoom: 0.8 });
+  const mockFitViewport = vi.mocked(fitViewport);
+  mockFitViewport.mockClear();
+  mockFitViewport.mockReturnValue({ x: 100, y: 50, zoom: 0.8 });
 });
 
 describe('updateLayout', () => {

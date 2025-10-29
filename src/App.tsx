@@ -1,4 +1,3 @@
-import './App.css';
 import ThemeProvider from './components/Theme/Provider';
 import { Toaster } from './components/ui/toaster';
 import Dashboard from './Dashboard';

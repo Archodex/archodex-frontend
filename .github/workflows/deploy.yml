@@ -47,6 +47,8 @@ jobs:
           cache: 'npm'
 
       - name: Build
+        env:
+          VITE_POSTHOG_PROJECT_API_KEY: ${{ vars.POSTHOG_PROJECT_API_KEY }}
         run: |-
           USER_POOL_ID=$(aws cognito-idp list-user-pools --max-results 60 --query 'UserPools[?Name==`archodex`].Id' --output text)
           export VITE_USER_POOL_CLIENT_ID=$(aws cognito-idp list-user-pool-clients --user-pool-id $USER_POOL_ID --max-results 60 --query 'UserPoolClients[?ClientName==`app`].ClientId' --output text)

@@ -184,6 +184,7 @@ const fetchProxy = async (req: Request, tokens: AuthTokens, browserClientId: Bro
 
   const authedReq = new Request(req, {
     headers: new Headers({ ...Object.fromEntries(req.headers), Authorization: `Bearer ${tokens.accessToken}` }),
+    credentials: 'include',
   });
 
   if (authedReq.url.endsWith('/accounts') && ['GET', 'POST'].includes(authedReq.method)) {

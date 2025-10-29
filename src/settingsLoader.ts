@@ -1,13 +1,16 @@
 import { LoaderFunction, redirect } from 'react-router';
 import { AccountsLoaderData } from './lib/accountsLoader';
+import { validateLocalhostNetworkAccess } from './lib/utils';
 
 interface SettingsLoaderAccountInitializedData {
   account_initialized: true;
   report_api_keys: ReportAPIKey[];
+  potentialLNAError?: never;
 }
 
 interface SettingsLoaderAccountNotInitializedData {
   account_initialized: false;
+  potentialLNAError: boolean;
 }
 
 export type SettingsLoaderData = SettingsLoaderAccountInitializedData | SettingsLoaderAccountNotInitializedData;
@@ -26,6 +29,8 @@ export const settingsLoader: LoaderFunction<AccountsLoaderData> = (async (
     return redirect(`/`);
   }
 
+  await validateLocalhostNetworkAccess(account);
+
   const reportApiKeyUrl = accountsLoaderData.apiUrl(accountId, `/account/${account.id}/report_api_keys`);
 
   let response;
@@ -34,12 +39,14 @@ export const settingsLoader: LoaderFunction<AccountsLoaderData> = (async (
   } catch (err) {
     console.error(`Failed to fetch report API keys for account ${accountId} from ${reportApiKeyUrl}: ${String(err)}`);
 
-    return { account_initialized: false };
+    const potentialLNAError = err instanceof TypeError && account.endpoint.startsWith('http://localhost');
+
+    return { account_initialized: false, potentialLNAError };
   }
 
   if (!response.ok) {
     if (response.status === 404) {
-      return { account_initialized: false };
+      return { account_initialized: false, potentialLNAError: false };
     }
 
     return response;

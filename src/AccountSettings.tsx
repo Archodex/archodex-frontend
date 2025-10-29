@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useLoaderData, useOutletContext } from 'react-router';
+import { toast } from '@/hooks/use-toast';
 import ReportAPIKeys from './settings/ReportAPIKeys';
 import { SettingsLoaderData } from './settingsLoader';
 import InitializeAccount from './settings/InitializeAccount';
@@ -10,6 +11,16 @@ import { AccountRoutesContext } from './AccountRoutes';
 const AccountSettings: React.FC = () => {
   const accountContext = useOutletContext<AccountRoutesContext>();
   const settingsData = useLoaderData<SettingsLoaderData>();
+
+  if (settingsData.potentialLNAError) {
+    toast({
+      title: 'Localhost Network Error',
+      description:
+        'Could not reach the localhost account endpoint. Some browsers, including Safari and Brave, do not support localhost account endpoints. In other browsers, please check the site settings to ensure local resources are accessible.',
+      variant: 'destructive',
+      duration: Infinity,
+    });
+  }
 
   return (
     <div className="w-full p-10">

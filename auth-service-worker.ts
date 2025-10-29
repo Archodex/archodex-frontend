@@ -156,6 +156,11 @@ self.addEventListener('fetch', (event: FetchEvent) => {
     return;
   }
 
+  // Passthrough health checks used for local network access permission prompts
+  if (event.request.url.endsWith('/health')) {
+    return;
+  }
+
   if (!tokens) {
     // no tokens yet, passthrough all requests
     return;

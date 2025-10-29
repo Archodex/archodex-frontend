@@ -444,3 +444,21 @@ export const awsIconUrl = (type: string, name: string) =>
 export const lucideIconUrl = (name: string) => `https://cdn.jsdelivr.net/npm/lucide-static@0.471.0/icons/${name}.svg`;
 
 export const simpleIconUrl = (name: string) => `https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/${name}.svg`;
+
+let lnaValidated = false;
+export const validateLocalhostNetworkAccess = async (account: Account) => {
+  if (lnaValidated) {
+    return;
+  }
+
+  if (account.endpoint.startsWith('http://localhost')) {
+    // Attempt a request to the local backend to trigger Local Network Access permission prompt
+    // See https://docs.google.com/document/d/1QQkqehw8umtAgz5z0um7THx-aoU251p705FbIQjDuGs
+    try {
+      await fetch(account.endpoint + '/health');
+      lnaValidated = true;
+    } catch {
+      console.warn(`Local account backend at ${account.endpoint} is not reachable`);
+    }
+  }
+};

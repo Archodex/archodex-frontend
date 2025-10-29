@@ -1,7 +1,7 @@
 import { LoaderFunction } from 'react-router';
 import { AccountsLoaderData } from './accountsLoader';
 import { secrets as playgroundSecrets, inventory as playgroundInventory } from './playgroundData';
-import { isPlayground } from './utils';
+import { isPlayground, validateLocalhostNetworkAccess } from './utils';
 import { AccountUnreachableError } from '@/ErrorBoundary';
 import posthog from 'posthog-js';
 
@@ -12,9 +12,12 @@ const queryLoader = async (
   accountsLoaderData: AccountsLoaderData,
   type: string,
 ): Promise<Response> => {
-  if (!accountsLoaderData.hasAccount(accountId)) {
+  const account = accountsLoaderData.get(accountId);
+  if (!account) {
     return new Response(null, { status: 404 });
   }
+
+  await validateLocalhostNetworkAccess(account);
 
   let response;
   try {

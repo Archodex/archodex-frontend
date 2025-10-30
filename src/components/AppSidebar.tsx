@@ -23,6 +23,7 @@ import TutorialContext from './Tutorial/Context';
 import AccountSwitcher from './AccountSwitcher';
 import User from './User';
 import { redirectToAuth } from '@/lib/auth';
+import posthog from 'posthog-js';
 
 interface MenuItem {
   ref?: ElementRef;
@@ -47,13 +48,14 @@ const menuItems = (items: MenuItem[], accountId: string | undefined, setOpenMobi
       <SidebarMenuItem key={item.title} ref={item.ref}>
         <SidebarMenuButton
           asChild
-          isActive={window.location.pathname.includes(item.url)}
+          isActive={window.location.pathname.startsWith(url)}
           className={[
             'min-h-fit text-md [&>svg]:size-5 [&>svg]:text-primary',
             disabled ? 'text-muted-foreground pointer-events-none cursor-default' : '',
           ].join(' ')}
           onClick={() => {
             setOpenMobile(false);
+            posthog.capture('sidebar_item_clicked', { item: item.title });
           }}
         >
           <NavLink to={url} relative="path">
@@ -128,6 +130,7 @@ export const AppSidebar: React.FC = () => {
             <Button
               className="cursor-pointer"
               onClick={() => {
+                posthog.capture('sidebar_get_started_clicked');
                 redirectToAuth({ signup: true });
               }}
             >

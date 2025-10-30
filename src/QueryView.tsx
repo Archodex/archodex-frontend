@@ -13,6 +13,7 @@ import { DateRangePickerPopover } from './components/DateRangePickerPopover';
 import { type DateFilter } from './lib/dateFilter';
 import MenuSection from './lib/menuSection';
 import GettingStartedDialog from './components/GettingStartedDialog';
+import posthog from 'posthog-js';
 
 export interface QueryViewProps {
   section: MenuSection;
@@ -85,6 +86,8 @@ const QueryView: React.FC<QueryViewProps> = ({ section }) => {
                 tab={params.tableTab}
                 setTab={(tab) => {
                   let to;
+
+                  posthog.capture('query_view_table_tab_changed', { tab });
 
                   if (routeMatches.at(-1)?.params.tableTab) {
                     to = tab ? `../${tab}` : '..';

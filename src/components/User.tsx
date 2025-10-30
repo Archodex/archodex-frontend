@@ -10,13 +10,20 @@ import {
 } from './ui/dropdown-menu';
 import { useNavigate } from 'react-router';
 import { userEmail } from '@/lib/auth';
+import posthog from 'posthog-js';
 
 const User: React.FC = () => {
   const navigate = useNavigate();
 
   return (
     <SidebarMenuItem>
-      <DropdownMenu>
+      <DropdownMenu
+        onOpenChange={(open) => {
+          if (open) {
+            posthog.capture('user_menu_opened');
+          }
+        }}
+      >
         <DropdownMenuTrigger asChild>
           <SidebarMenuButton className="py-1 text-xs min-h-fit data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
             <UserIcon className="size-5! text-primary" />
@@ -26,11 +33,11 @@ const User: React.FC = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>{userEmail()}</DropdownMenuLabel>
-          <DropdownMenuItem onClick={() => void navigate('/user/settings')}>
+          <DropdownMenuItem className="cursor-pointer" onClick={() => void navigate('/user/settings')}>
             <UserCog className="text-primary" />
             <span>User Settings</span>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => void navigate('/logout')}>
+          <DropdownMenuItem className="cursor-pointer" onClick={() => void navigate('/logout')}>
             <LogOut className="text-primary" />
             <span>Logout</span>
           </DropdownMenuItem>

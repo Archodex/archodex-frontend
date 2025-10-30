@@ -6,6 +6,7 @@ import { TutorialCallbacksState } from './CallbacksContext';
 import { TutorialStepCommon } from './Context';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 import { redirectToAuth } from '@/lib/auth';
+import posthog from 'posthog-js';
 
 export type TutorialDialogStep = TutorialStepCommon &
   (TutorialDialogStepDefinition | TutorialSelectionDialogStepDefinition);
@@ -53,6 +54,7 @@ const TutorialDialog: React.FC<TutorialDialogProps> = ({
           <Button
             autoFocus
             onClick={() => {
+              posthog.capture('tutorial_get_started_clicked');
               redirectToAuth({ signup: true });
             }}
           >

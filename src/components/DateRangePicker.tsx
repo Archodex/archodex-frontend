@@ -8,6 +8,7 @@ import { getOptimalStartMonth, getMiddleRangeDates } from '@/lib/calendarUtils';
 import { useDateRangePicker } from '@/hooks/useDateRangePicker';
 import validateDateFilter from '@/lib/validateDateFilter';
 import { cn } from '@/lib/utils';
+import posthog from 'posthog-js';
 
 interface DateRangePickerProps {
   value?: DateFilter;
@@ -31,6 +32,7 @@ export function DateRangePicker({ value, onChange, onPendingChange, className }:
   } = useDateRangePicker({ value, onPendingChange });
 
   const handleApply = () => {
+    posthog.capture('date_range_picker_applied', { date_range: getCurrentValue() });
     const finalValue = getCurrentValue();
     if (finalValue) {
       try {

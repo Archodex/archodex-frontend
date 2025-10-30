@@ -22,6 +22,8 @@ import { Skeleton } from './components/ui/skeleton';
 import QueryDataDispatchContext from './contexts/QueryDataDispatchContext';
 import { QueryDataActions, LayoutState, Links, EventChainLinks, ViewportTransition } from './hooks/useQueryData';
 import { FIT_VIEW_DURATION } from './hooks/useQueryData/actions/fitView';
+import posthog from 'posthog-js';
+import { typeIdFromResourceId } from './lib/utils';
 
 export const ISSUE_BADGE_SIZE = 26;
 const MIN_ZOOM = 0.1;
@@ -213,17 +215,36 @@ const Inner: React.FC<QueryGraphProps> = ({ nodes, edges, eventChainLinks, laidO
           onNodesChange={(nodeChanges) => {
             for (const change of nodeChanges.filter((c) => c.type === 'select')) {
               if (change.selected) {
+                posthog.capture('graph_resource_selected', {
+                  resource_type: typeIdFromResourceId(nodes[change.id].data.id),
+                });
                 queryDataDispatch({ action: QueryDataActions.SelectResource, resourceId: change.id, refitView: false });
               } else {
+                posthog.capture('graph_resource_deselected', {
+                  resource_type: typeIdFromResourceId(nodes[change.id].data.id),
+                });
                 queryDataDispatch({ action: QueryDataActions.DeselectResource, resourceId: change.id });
               }
             }
           }}
           onEdgesChange={(edgeChanges) => {
             for (const change of edgeChanges.filter((c) => c.type === 'select')) {
+              const principal = edges[change.id].data?.events[0]?.principal;
+              const resource = edges[change.id].data?.events[0]?.resource;
+
               if (change.selected) {
+                posthog.capture('graph_event_selected', {
+                  principal_type: principal ? typeIdFromResourceId(principal) : undefined,
+                  event_type: edges[change.id].data?.events[0]?.type,
+                  resource_type: resource ? typeIdFromResourceId(resource) : undefined,
+                });
                 queryDataDispatch({ action: QueryDataActions.SelectEdge, edgeId: change.id, refitView: false });
               } else {
+                posthog.capture('graph_event_deselected', {
+                  principal_type: principal ? typeIdFromResourceId(principal) : undefined,
+                  event_type: edges[change.id].data?.events[0]?.type,
+                  resource_type: resource ? typeIdFromResourceId(resource) : undefined,
+                });
                 queryDataDispatch({ action: QueryDataActions.DeselectEdge, edgeId: change.id });
               }
             }
@@ -260,6 +281,7 @@ const Inner: React.FC<QueryGraphProps> = ({ nodes, edges, eventChainLinks, laidO
           >
             <ControlButton
               onClick={() => {
+                posthog.capture('graph_zoom_in');
                 zoomIn({ duration: FIT_VIEW_DURATION }).catch((error: unknown) => {
                   console.error('Zoom in error: ', error);
                 });
@@ -272,6 +294,7 @@ const Inner: React.FC<QueryGraphProps> = ({ nodes, edges, eventChainLinks, laidO
             </ControlButton>
             <ControlButton
               onClick={() => {
+                posthog.capture('graph_zoom_out');
                 zoomOut({ duration: FIT_VIEW_DURATION }).catch((error: unknown) => {
                   console.error('Zoom out error: ', error);
                 });
@@ -284,6 +307,7 @@ const Inner: React.FC<QueryGraphProps> = ({ nodes, edges, eventChainLinks, laidO
             </ControlButton>
             <ControlButton
               onClick={() => {
+                posthog.capture('graph_fit_view');
                 queryDataDispatch({ action: QueryDataActions.FitView, duration: FIT_VIEW_DURATION });
               }}
               title="fit view"
@@ -293,6 +317,7 @@ const Inner: React.FC<QueryGraphProps> = ({ nodes, edges, eventChainLinks, laidO
             </ControlButton>
             <ControlButton
               onClick={() => {
+                posthog.capture('graph_expand_all');
                 queryDataDispatch({ action: QueryDataActions.ExpandAll });
               }}
               title="expand all"
@@ -302,6 +327,7 @@ const Inner: React.FC<QueryGraphProps> = ({ nodes, edges, eventChainLinks, laidO
             </ControlButton>
             <ControlButton
               onClick={() => {
+                posthog.capture('graph_collapse_all');
                 queryDataDispatch({ action: QueryDataActions.CollapseAll });
               }}
               title="collapse all"

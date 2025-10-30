@@ -18,6 +18,10 @@ export function edgeIdFromResourceIds(source: ResourceId, target: ResourceId) {
   return `${nodeIdFromResourceId(source)}-${nodeIdFromResourceId(target)}`;
 }
 
+export function typeIdFromResourceId(resourceId: ResourceId) {
+  return resourceId.map((part) => part.type).join('::');
+}
+
 const addNodeAndParents = (id: ResourceId, nodes: Record<string, Node<ResourceNodeData>>) => {
   const nodeId = nodeIdFromResourceId(id);
 
@@ -63,6 +67,8 @@ export const labelForResourceType = (type: string | undefined) => {
   switch (type) {
     case 'Secret Value':
       return 'Secret Value Hash';
+    case 'Blob':
+      return 'File';
     default:
       return type;
   }
@@ -324,7 +330,7 @@ export function accountsUrl({
   region ??= 'us-west-2';
 
   if (location.hostname === 'localhost') {
-    const archodexDomain = (import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com';
+    const archodexDomain = import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com';
     const globalEndpoint =
       (import.meta.env.VITE_ARCHODEX_ACCOUNTS_BACKEND_ENDPOINT as string | undefined) ??
       `https://api.us-west-2.${archodexDomain}`;
@@ -438,3 +444,21 @@ export const awsIconUrl = (type: string, name: string) =>
 export const lucideIconUrl = (name: string) => `https://cdn.jsdelivr.net/npm/lucide-static@0.471.0/icons/${name}.svg`;
 
 export const simpleIconUrl = (name: string) => `https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/${name}.svg`;
+
+let lnaValidated = false;
+export const validateLocalhostNetworkAccess = async (account: Account) => {
+  if (lnaValidated) {
+    return;
+  }
+
+  if (account.endpoint.startsWith('http://localhost')) {
+    // Attempt a request to the local backend to trigger Local Network Access permission prompt
+    // See https://docs.google.com/document/d/1QQkqehw8umtAgz5z0um7THx-aoU251p705FbIQjDuGs
+    try {
+      await fetch(account.endpoint + '/health');
+      lnaValidated = true;
+    } catch {
+      console.warn(`Local account backend at ${account.endpoint} is not reachable`);
+    }
+  }
+};

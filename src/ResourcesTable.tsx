@@ -7,7 +7,7 @@ import {
   RowSelectionState,
   useReactTable,
 } from '@tanstack/react-table';
-import { nodeIdFromResourceId, TZ_OFFSET } from './lib/utils';
+import { nodeIdFromResourceId, typeIdFromResourceId, TZ_OFFSET } from './lib/utils';
 import { Checkbox } from './components/ui/checkbox';
 import { Button } from './components/ui/button';
 import { ArrowUpDown } from 'lucide-react';
@@ -15,6 +15,7 @@ import ResourceIcons from './components/ResourceIcons';
 import ResourceLink from './components/ResourceLink';
 import QueryDataDispatchContext from './contexts/QueryDataDispatchContext';
 import { QueryDataActions } from './hooks/useQueryData';
+import posthog from 'posthog-js';
 
 export interface ResourcesTableProps {
   resources: Resource[];
@@ -128,12 +129,24 @@ const ResourcesTable: React.FC<ResourcesTableProps> = ({ resources, selectedReso
 
       for (const resourceId of newSelectedResources) {
         if (!selectedResources.has(resourceId)) {
+          const resource = resources.find((r) => nodeIdFromResourceId(r.id) === resourceId);
+
+          posthog.capture('resources_table_row_selected', {
+            resource_type: resource ? typeIdFromResourceId(resource.id) : undefined,
+          });
+
           queryDataDispatch({ action: QueryDataActions.SelectResource, resourceId: resourceId });
         }
       }
 
       for (const resourceId of selectedResources) {
         if (!newRowSelectionValue[resourceId]) {
+          const resource = resources.find((r) => nodeIdFromResourceId(r.id) === resourceId);
+
+          posthog.capture('resources_table_row_deselected', {
+            resource_type: resource ? typeIdFromResourceId(resource.id) : undefined,
+          });
+
           queryDataDispatch({ action: QueryDataActions.DeselectResource, resourceId: resourceId });
         }
       }

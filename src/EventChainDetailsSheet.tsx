@@ -5,8 +5,9 @@ import ResourceIdDetails from './ResourceIdDetails';
 import TextSeparator from './components/TextSeparator';
 import DetailsSeenAt from './components/DetailsSeenAt';
 import EventComboBox from './components/EventComboBox';
-import { edgeIdFromResourceIds, labelForResourceType } from './lib/utils';
+import { edgeIdFromResourceIds, labelForResourceType, typeIdFromResourceId } from './lib/utils';
 import { QueryData } from './hooks/useQueryData';
+import posthog from 'posthog-js';
 
 interface EventChainDetailsSheetProps {
   data: QueryData;
@@ -42,6 +43,14 @@ const EventChainDetailsSheet: React.FC<EventChainDetailsSheetProps> = ({
   const handleResourceEventChange = useCallback(
     (resourceEvent: ResourceEvent) => {
       const resourceEventIndex = data.resourceEvents.indexOf(resourceEvent);
+
+      posthog.capture('event_chain_resource_event_changed', {
+        resourceEventIndex,
+        to_principal_type: typeIdFromResourceId(resourceEvent.principal),
+        to_event_type: resourceEvent.type,
+        to_resource_type: typeIdFromResourceId(resourceEvent.resource),
+      });
+
       onResourceEventChange(resourceEventIndex);
     },
     [data, onResourceEventChange],
@@ -51,7 +60,20 @@ const EventChainDetailsSheet: React.FC<EventChainDetailsSheetProps> = ({
     <Sheet
       open={true}
       onOpenChange={(open) => {
-        if (!open) onDismiss();
+        if (open) {
+          posthog.capture('event_chain_details_sheet_opened', {
+            principal_type: typeIdFromResourceId(resourceEvent.principal),
+            event_type: resourceEvent.type,
+            resource_type: typeIdFromResourceId(resourceEvent.resource),
+          });
+        } else {
+          posthog.capture('event_chain_details_sheet_closed', {
+            principal_type: typeIdFromResourceId(resourceEvent.principal),
+            event_type: resourceEvent.type,
+            resource_type: typeIdFromResourceId(resourceEvent.resource),
+          });
+          onDismiss();
+        }
       }}
     >
       <SheetContent side="right" className="w-96 overflow-scroll border-none" aria-describedby={undefined}>

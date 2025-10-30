@@ -12,6 +12,7 @@ import { SidebarMenuButton } from './ui/sidebar';
 import { Check, ChevronsUpDown, GalleryVerticalEnd, Plus, Settings } from 'lucide-react';
 import { useNavigate, useParams, useRouteLoaderData } from 'react-router';
 import { AccountsLoaderData } from '@/lib/accountsLoader';
+import posthog from 'posthog-js';
 
 const AccountSwitcher: React.FC = () => {
   const navigate = useNavigate();
@@ -42,7 +43,13 @@ const AccountSwitcher: React.FC = () => {
   const { accounts } = accountsLoaderData;
 
   return (
-    <DropdownMenu>
+    <DropdownMenu
+      onOpenChange={(open) => {
+        if (open) {
+          posthog.capture('account_switcher_opened');
+        }
+      }}
+    >
       <DropdownMenuTrigger asChild>
         <SidebarMenuButton
           className={`py-1 text-xs min-h-fit data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground`}
@@ -58,7 +65,7 @@ const AccountSwitcher: React.FC = () => {
           {Object.keys(accounts).map((accountId) => (
             <DropdownMenuItem
               key={accountId}
-              className="justify-between"
+              className="justify-between cursor-pointer"
               onClick={() => {
                 switchAccount(accountId);
               }}
@@ -70,6 +77,7 @@ const AccountSwitcher: React.FC = () => {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem
+          className="cursor-pointer"
           onClick={() => {
             if (!currentAccountId) {
               throw new Error('No current account to navigate to settings for?');
@@ -83,6 +91,7 @@ const AccountSwitcher: React.FC = () => {
           Account Settings
         </DropdownMenuItem>
         <DropdownMenuItem
+          className="cursor-pointer"
           onClick={() => {
             void navigate('/create_account');
           }}

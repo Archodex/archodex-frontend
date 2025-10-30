@@ -27,6 +27,7 @@ import { TZ_OFFSET } from '@/lib/utils';
 import { AccountRoutesContext } from '@/AccountRoutes';
 import ReportApiKeyCreateForm from '@/components/ReportApiKeyCreateForm';
 import ReportApiKeyCreateFormState from '@/components/ReportApiKeyCreateFormState';
+import posthog from 'posthog-js';
 
 interface ReportAPIKeysProps {
   keys: ReportAPIKey[];
@@ -75,8 +76,12 @@ const ReportAPIKeys: React.FC<ReportAPIKeysProps> = ({ keys }) => {
     ReportApiKeyCreateFormState.InputDescription,
   );
 
-  const handleNewReportAPIKeyDialogOnOpenChange = React.useCallback(() => {
+  const handleNewReportAPIKeyDialogOnOpenChange = React.useCallback((open: boolean) => {
     setReportApiKeyCreateFormState(ReportApiKeyCreateFormState.InputDescription);
+
+    if (open) {
+      posthog.capture('report_api_key_create_dialog_opened');
+    }
   }, []);
 
   const onRevokeReportAPIKey = async () => {
@@ -98,12 +103,15 @@ const ReportAPIKeys: React.FC<ReportAPIKeysProps> = ({ keys }) => {
 
       if (res.ok) {
         toast({ title: 'Report API key revoked' });
+        posthog.capture('report_api_key_revoked');
         void revalidator.revalidate();
       } else {
+        posthog.captureException(new Error(`Failed to revoke report API key: ${res.statusText}`));
         console.error(`Failed to revoke report API key: ${res.statusText}`);
         toast({ title: 'Failed to revoke report API key', duration: Infinity, variant: 'destructive' });
       }
     } catch (err) {
+      posthog.captureException(err);
       deletingToast.dismiss();
       console.error(`Failed to revoke report API key: ${String(err)}`);
       toast({ title: 'Failed to revoke report API key', duration: Infinity, variant: 'destructive' });

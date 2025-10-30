@@ -12,6 +12,7 @@ import { useNavigate, useRevalidator } from 'react-router';
 import { invalidateAccountsLoaderData } from './lib/accountsLoader';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import { Input } from './components/ui/input';
+import posthog, { Properties } from 'posthog-js';
 
 const regions: readonly [string, ...string[]] = (import.meta.env.VITE_ARCHODEX_REGIONS?.split(',').sort() ?? [
   'us-west-2',
@@ -75,6 +76,8 @@ const AccountCreate: React.FC = () => {
         } catch (err) {
           console.error('Failed to create account:', err);
 
+          posthog.captureException(err);
+
           createStatusToast.dismiss();
 
           const failedStatusToast = toast({
@@ -88,6 +91,17 @@ const AccountCreate: React.FC = () => {
           setFormDisabled(false);
           return;
         }
+
+        posthog.group('account', accountId);
+
+        const props: Properties = { accountId };
+        if ('region' in options) {
+          props.region = options.region;
+        } else {
+          props.endpoint = options.endpoint;
+        }
+
+        posthog.capture('account_created', props);
 
         // Tell react-router to refetch the accounts list when we navigate below
         invalidateAccountsLoaderData();
@@ -173,7 +187,7 @@ const AccountCreate: React.FC = () => {
               <p>
                 Self-hosted accounts are stored in an Archodex Service environment you maintain. To get started, see the{' '}
                 <a
-                  href={`https://${(import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com'}/docs/self-host`}
+                  href={`https://${import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com'}/docs/self-host`}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -212,7 +226,7 @@ const AccountCreate: React.FC = () => {
               <p>
                 To learn more, visit our{' '}
                 <a
-                  href={`https://${(import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com'}/docs/agent/logging-only`}
+                  href={`https://${import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com'}/docs/getting-started/logging-only-mode`}
                   target="_blank"
                   rel="noreferrer"
                 >

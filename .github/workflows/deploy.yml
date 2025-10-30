@@ -47,11 +47,19 @@ jobs:
           cache: 'npm'
 
       - name: Build
+        env:
+          VITE_POSTHOG_PROJECT_API_KEY: ${{ vars.POSTHOG_PROJECT_API_KEY }}
         run: |-
           USER_POOL_ID=$(aws cognito-idp list-user-pools --max-results 60 --query 'UserPools[?Name==`archodex`].Id' --output text)
           export VITE_USER_POOL_CLIENT_ID=$(aws cognito-idp list-user-pool-clients --user-pool-id $USER_POOL_ID --max-results 60 --query 'UserPoolClients[?ClientName==`app`].ClientId' --output text)
 
           export VITE_ARCHODEX_REGIONS=$(aws ssm get-parameter --name "customer_data_regions" --query "Parameter.Value" --output text)
+
+          export VITE_ARCHODEX_DOMAIN=$(aws ssm get-parameter --name "/account_subdomain/domain" --query "Parameter.Value" --output text)
+
+          if [ "${VITE_ARCHODEX_DOMAIN}" != "archodex.com" ]; then
+            echo "::add-mask::${VITE_ARCHODEX_DOMAIN}"
+          fi
 
           npm ci
           npm run build

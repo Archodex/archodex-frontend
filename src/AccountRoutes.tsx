@@ -16,9 +16,7 @@ export class AccountRoutesContext {
   }
 
   isSelfHosted() {
-    return !this.account.endpoint.endsWith(
-      `.${(import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com'}`,
-    );
+    return !this.account.endpoint.endsWith(`.${import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com'}`);
   }
 }
 

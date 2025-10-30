@@ -13,6 +13,7 @@ import { Button } from './components/ui/button';
 import { ArrowUpDown } from 'lucide-react';
 import { QueryDataActions } from './hooks/useQueryData';
 import QueryDataDispatchContext from './contexts/QueryDataDispatchContext';
+import posthog from 'posthog-js';
 
 export interface EnvironmentsTableProps {
   environments: string[];
@@ -129,6 +130,11 @@ const EnvironmentsTable: React.FC<EnvironmentsTableProps> = ({ environments, res
       for (const env of environmentsWithResources) {
         if (newRowSelectionValue[env] && !rowSelection[env]) {
           const envResources = resources.filter((resource) => isTaggedWithEnvironment(resource, env, resources));
+
+          if (envResources.length > 0) {
+            posthog.capture('environment_table_row_selected');
+          }
+
           envResources.forEach((resource) => {
             queryDataDispatch({
               action: QueryDataActions.SelectResource,
@@ -138,6 +144,11 @@ const EnvironmentsTable: React.FC<EnvironmentsTableProps> = ({ environments, res
           });
         } else if (rowSelection[env] && !newRowSelectionValue[env]) {
           const envResources = resources.filter((resource) => isTaggedWithEnvironment(resource, env, resources));
+
+          if (envResources.length > 0) {
+            posthog.capture('environment_table_row_deselected');
+          }
+
           envResources.forEach((resource) => {
             queryDataDispatch({
               action: QueryDataActions.DeselectResource,

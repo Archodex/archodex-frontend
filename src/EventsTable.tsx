@@ -7,7 +7,7 @@ import {
   RowSelectionState,
   useReactTable,
 } from '@tanstack/react-table';
-import { edgeIdFromResourceIds, nodeIdFromResourceId, TZ_OFFSET } from './lib/utils';
+import { edgeIdFromResourceIds, nodeIdFromResourceId, typeIdFromResourceId, TZ_OFFSET } from './lib/utils';
 import { Checkbox } from './components/ui/checkbox';
 import { Button } from './components/ui/button';
 import { ArrowUpDown, Info } from 'lucide-react';
@@ -15,6 +15,7 @@ import ResourceIcons from './components/ResourceIcons';
 import ResourceLink from './components/ResourceLink';
 import { QueryDataActions } from './hooks/useQueryData';
 import QueryDataDispatchContext from './contexts/QueryDataDispatchContext';
+import posthog from 'posthog-js';
 
 export interface EventsTableProps {
   resourceEvents: ResourceEvent[];
@@ -200,6 +201,12 @@ const EventsTable: React.FC<EventsTableProps> = ({ resourceEvents, selectedEdges
         const edgeId = edgeIdFromResourceIds(event.principal, event.resource);
 
         if (!selectedEdges.has(edgeId)) {
+          posthog.capture('events_table_row_selected', {
+            principal_type: typeIdFromResourceId(event.principal),
+            event_type: event.type,
+            resource_type: typeIdFromResourceId(event.resource),
+          });
+
           queryDataDispatch({ action: QueryDataActions.SelectEdge, edgeId });
         }
       }
@@ -209,6 +216,12 @@ const EventsTable: React.FC<EventsTableProps> = ({ resourceEvents, selectedEdges
         const edgeId = edgeIdFromResourceIds(event.principal, event.resource);
 
         if (selectedEdges.has(edgeId) && !newRowSelectionValue[row.id]) {
+          posthog.capture('events_table_row_deselected', {
+            principal_type: typeIdFromResourceId(event.principal),
+            event_type: event.type,
+            resource_type: typeIdFromResourceId(event.resource),
+          });
+
           queryDataDispatch({ action: QueryDataActions.DeselectEdge, edgeId });
         }
       }

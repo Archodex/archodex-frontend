@@ -15,6 +15,7 @@ import TutorialCallbacksContext from './components/Tutorial/CallbacksContext';
 import { QueryDataActions } from './hooks/useQueryData';
 import QueryDataDispatchContext from './contexts/QueryDataDispatchContext';
 import { Issue } from './hooks/useQueryData/issues';
+import posthog from 'posthog-js';
 
 export interface IssuesTableProps {
   issues: Map<string, Issue>;
@@ -91,12 +92,14 @@ const IssuesTable: React.FC<IssuesTableProps> = ({ issues, selectedIssues }) => 
 
       for (const issueId of selectedIssues.keys()) {
         if (!newRowSelectionValue[issueId]) {
+          posthog.capture('issues_table_row_deselected');
           queryDataDispatch({ action: QueryDataActions.DeselectIssue, issueId });
         }
       }
 
       for (const [id, isSelected] of Object.entries(newRowSelectionValue)) {
         if (isSelected && !selectedIssues.has(id)) {
+          posthog.capture('issues_table_row_selected');
           queryDataDispatch({ action: QueryDataActions.SelectIssue, issueId: id });
         }
       }

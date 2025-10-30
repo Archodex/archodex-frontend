@@ -1,8 +1,9 @@
 import { LoaderFunction } from 'react-router';
 import { AccountsLoaderData } from './accountsLoader';
 import { secrets as playgroundSecrets, inventory as playgroundInventory } from './playgroundData';
-import { isPlayground } from './utils';
+import { isPlayground, validateLocalhostNetworkAccess } from './utils';
 import { AccountUnreachableError } from '@/ErrorBoundary';
+import posthog from 'posthog-js';
 
 export type QueryLoaderData = QueryResponse;
 
@@ -11,14 +12,18 @@ const queryLoader = async (
   accountsLoaderData: AccountsLoaderData,
   type: string,
 ): Promise<Response> => {
-  if (!accountsLoaderData.hasAccount(accountId)) {
+  const account = accountsLoaderData.get(accountId);
+  if (!account) {
     return new Response(null, { status: 404 });
   }
+
+  await validateLocalhostNetworkAccess(account);
 
   let response;
   try {
     response = await fetch(accountsLoaderData.apiUrl(accountId, `/account/${accountId}/query/${type}`));
   } catch (error) {
+    posthog.captureException(error);
     console.error(`Failed to fetch query data for account ${accountId}: ${String(error)}`);
     throw new AccountUnreachableError(
       (
@@ -32,6 +37,7 @@ const queryLoader = async (
   }
 
   if (!response.ok) {
+    posthog.captureException(new Error(`Failed to fetch query data for account ${accountId}: ${response.statusText}`));
     console.error(`Failed to fetch query data for account ${accountId}: ${response.statusText}`);
     throw new AccountUnreachableError(`Failed to query for resources data: ${response.statusText}`, accountId);
   }

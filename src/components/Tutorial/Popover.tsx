@@ -10,6 +10,7 @@ import TutorialLightbox from './Lightbox';
 import { TutorialCallbacksState } from './CallbacksContext';
 import { TutorialStepCommon } from './Context';
 import { redirectToAuth } from '@/lib/auth';
+import posthog from 'posthog-js';
 
 export type TutorialPopoverStep = TutorialStepCommon & TutorialPopoverStepDefinition & { isInSidebar: boolean };
 
@@ -114,6 +115,7 @@ const TutorialPopover: React.FC<TutorialPopoverProps> = ({
               <Button
                 autoFocus
                 onClick={() => {
+                  posthog.capture('tutorial_get_started_clicked');
                   redirectToAuth({ signup: true });
                 }}
               >

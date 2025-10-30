@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { ExternalLink } from 'lucide-react';
-import { labelForResource } from '@/lib/utils';
+import { labelForResource, typeIdFromResourceId } from '@/lib/utils';
+import posthog from 'posthog-js';
 
 export interface ResourceLinkProps {
   id: ResourceId;
@@ -15,7 +16,13 @@ const ResourceLink: React.FC<ResourceLinkProps> = ({ id, text, className = '' })
 
   if (urlFunc) {
     return (
-      <a href={urlFunc(id)} target="_blank" rel="noreferrer" className={`flex items-center ${className}`}>
+      <a
+        href={urlFunc(id)}
+        target="_blank"
+        rel="noreferrer"
+        className={`flex items-center ${className}`}
+        onClick={() => posthog.capture('resource_link_clicked', { resource_type: typeIdFromResourceId(id) })}
+      >
         <span>{label}</span>
         <ExternalLink size={16} className="inline ml-1" />
       </a>

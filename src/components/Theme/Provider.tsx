@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ThemeContext, { Theme } from './Context';
+import posthog from 'posthog-js';
 
 declare global {
   interface Window {
@@ -38,12 +39,18 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 
       root.classList.add(systemTheme);
 
+      posthog.capture('theme_applied', { theme, systemTheme });
+
       mediaQuery.addEventListener('change', () => {
         const newTheme = mediaQuery.matches ? 'dark' : 'light';
         root.classList.remove('light', 'dark');
         root.classList.add(newTheme);
+
+        posthog.capture('system_theme_changed', { newTheme });
       });
     } else {
+      posthog.capture('theme_applied', { theme });
+
       root.classList.add(theme);
     }
   }, [theme]);

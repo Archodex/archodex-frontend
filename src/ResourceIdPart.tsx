@@ -5,6 +5,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './comp
 import { Button } from './components/ui/button';
 import ResourceLink from './components/ResourceLink';
 import { labelForResourceType } from './lib/utils';
+import posthog from 'posthog-js';
 
 interface ResourceIdProps {
   id: ResourceId;
@@ -17,7 +18,13 @@ const ResourceIdPart: React.FC<ResourceIdProps> = ({ id }) => {
     <>
       <div className="grid">
         <TooltipProvider>
-          <Tooltip>
+          <Tooltip
+            onOpenChange={(open) => {
+              if (open) {
+                posthog.capture('resource_id_part_type_tooltip_opened', { resource_part_type: idPart.type });
+              }
+            }}
+          >
             <TooltipTrigger asChild>
               <h5 className="italic text-left truncate">{labelForResourceType(idPart.type)}</h5>
             </TooltipTrigger>
@@ -29,7 +36,13 @@ const ResourceIdPart: React.FC<ResourceIdProps> = ({ id }) => {
       </div>
       <div className="flex">
         <TooltipProvider>
-          <Tooltip>
+          <Tooltip
+            onOpenChange={(open) => {
+              if (open) {
+                posthog.capture('resource_id_part_id_tooltip_opened', { resource_part_type: idPart.type });
+              }
+            }}
+          >
             <TooltipTrigger className="overflow-hidden grow">
               <ResourceLink className="block text-left truncate px-4 font-semibold select-text" id={id} />
             </TooltipTrigger>

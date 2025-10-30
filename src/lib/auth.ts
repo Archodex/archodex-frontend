@@ -1,14 +1,14 @@
 import { LoaderFunction, redirect } from 'react-router';
 import { isPlayground } from './utils';
+import posthog from 'posthog-js';
 
 const ARCHODEX_COM_USER_POOL_CLIENT_ID = '1a5vsre47o6pa39p3p81igfken';
-const USER_POOL_CLIENT_ID =
-  (import.meta.env.VITE_USER_POOL_CLIENT_ID as string | undefined) ?? ARCHODEX_COM_USER_POOL_CLIENT_ID;
+const USER_POOL_CLIENT_ID = import.meta.env.VITE_USER_POOL_CLIENT_ID ?? ARCHODEX_COM_USER_POOL_CLIENT_ID;
 
 const archodexDomain = () =>
   location.hostname === 'localhost'
-    ? ((import.meta.env.VITE_ARCHODEX_DOMAIN as string | undefined) ?? 'archodex.com')
-    : location.hostname.replace(/^app\./, '');
+    ? (import.meta.env.VITE_ARCHODEX_DOMAIN ?? 'archodex.com')
+    : location.hostname.replace(/^(?:app|play)\./, '');
 
 const authDomain = () => `auth.${archodexDomain()}`;
 
@@ -22,11 +22,13 @@ export function redirectToAuth(options?: { signup?: boolean }) {
   sessionStorage.setItem('authHistoryLength', history.length.toString());
   sessionStorage.setItem('authLastPathname', location.pathname);
 
+  const redirect_uri = location.origin.replace(/play\./, 'app.') + '/oauth2/idpresponse';
+
   const authUrl = new URL(path, `https://${authDomain()}`);
   authUrl.searchParams.set('response_type', 'code');
   authUrl.searchParams.set('client_id', USER_POOL_CLIENT_ID);
   authUrl.searchParams.set('state', state);
-  authUrl.searchParams.set('redirect_uri', `${location.origin}/oauth2/idpresponse`);
+  authUrl.searchParams.set('redirect_uri', redirect_uri);
 
   location.href = authUrl.toString();
 }
@@ -75,6 +77,7 @@ export const isAuthenticated = new Promise<boolean>((resolve) => {
         switch (data.type) {
           case 'authSuccess':
             _userEmail = data.userEmail;
+            posthog.identify(data.userId);
             authenticatedResolver(true);
             break;
 
@@ -161,6 +164,7 @@ export const idpResponseLoader: LoaderFunction = async () => {
       switch (data.type) {
         case 'authSuccess':
           _userEmail = data.userEmail;
+          posthog.identify(data.userId);
           resolve();
           break;
 
@@ -232,6 +236,8 @@ export function redirectToPasskeyRegistration() {
 }
 
 export const passkeyResponseLoader: LoaderFunction = () => {
+  posthog.capture('passkey_registered');
+
   const historyLengthString = sessionStorage.getItem('authHistoryLength');
   const lastPathname = sessionStorage.getItem('authLastPathname');
   if (historyLengthString && lastPathname) {
@@ -258,6 +264,8 @@ export const passkeyResponseLoader: LoaderFunction = () => {
 };
 
 export async function logOutLoader() {
+  posthog.reset();
+
   const serviceWorker = (await navigator.serviceWorker.ready).active;
   if (serviceWorker) {
     // This will synchronously clear the auth service worker's tokens and asynchronously revoke the refresh token.

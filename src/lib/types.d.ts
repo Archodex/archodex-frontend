@@ -19,6 +19,7 @@ type AuthMessage = AuthCodeMessage | AuthCheckMessage | AuthLogoutMessage;
 interface AuthResponseSuccessMessage {
   type: 'authSuccess';
   userEmail: string;
+  userId: string;
 }
 
 interface AuthResponseNotAuthenticatedMessage {

@@ -186,6 +186,9 @@
   * {
     @apply border-border;
   }
+  :focus-visible {
+    @apply outline-primary;
+  }
   body {
     @apply bg-background text-foreground;
   }

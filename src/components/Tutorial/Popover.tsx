@@ -9,8 +9,7 @@ import { X } from 'lucide-react';
 import TutorialLightbox from './Lightbox';
 import { TutorialCallbacksState } from './CallbacksContext';
 import { TutorialStepCommon } from './Context';
-import { redirectToAuth } from '@/lib/auth';
-import posthog from 'posthog-js';
+import FinishButton from './FinishButton';
 
 export type TutorialPopoverStep = TutorialStepCommon & TutorialPopoverStepDefinition & { isInSidebar: boolean };
 
@@ -111,17 +110,7 @@ const TutorialPopover: React.FC<TutorialPopoverProps> = ({
                 Next
               </Button>
             )}
-            {showFinishButton && (
-              <Button
-                autoFocus
-                onClick={() => {
-                  posthog.capture('tutorial_get_started_clicked');
-                  redirectToAuth({ signup: true });
-                }}
-              >
-                Get Started
-              </Button>
-            )}
+            {showFinishButton && <FinishButton tutorialCallbacks={tutorialCallbacks} />}
           </div>
         </PopoverContent>
       </Popover>

@@ -6,10 +6,16 @@ import { Button } from '../ui/button';
 import { useSidebar } from '../ui/sidebar';
 import TutorialContext from './Context';
 import TutorialCallbacksContext from './CallbacksContext';
+import { NotebookPen } from 'lucide-react';
+import SurveyContext from '../Survey/Context';
+import SurveyName from '../Survey/SurveyName';
+import { Tooltip, TooltipContent } from '../ui/tooltip';
+import { TooltipTrigger } from '@radix-ui/react-tooltip';
 
 const TutorialElement: React.FC = () => {
   const { currentStep, closed, atEnd, refs } = useContext(TutorialContext);
   const tutorialCallbacksContext = useContext(TutorialCallbacksContext);
+  const { openSurvey } = useContext(SurveyContext);
   const routeMatch = useMatches().at(-1);
   const { isMobile, openMobile, setOpenMobile } = useSidebar();
   const location = useLocation();
@@ -47,13 +53,25 @@ const TutorialElement: React.FC = () => {
 
   if (closed) {
     return (
-      <Button
-        // Default bg has a hover mixin with transparency
-        className="fixed z-40 bottom-10 right-10 hover:bg-primary cursor-pointer"
-        onClick={atEnd ? tutorialCallbacksContext.restartTutorial : tutorialCallbacksContext.resumeTutorial}
-      >
-        {atEnd ? 'Restart Tutorial' : 'Resume Tutorial'}
-      </Button>
+      <div className="fixed z-40 bottom-10 right-10 flex gap-2">
+        <Button onClick={atEnd ? tutorialCallbacksContext.restartTutorial : tutorialCallbacksContext.resumeTutorial}>
+          {atEnd ? 'Start a Tutorial' : 'Resume Tutorial'}
+        </Button>
+
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant="outline"
+              onClick={() => {
+                openSurvey(SurveyName.PlaygroundFeedback);
+              }}
+            >
+              <NotebookPen className="text-primary" />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>Give Us Feedback</TooltipContent>
+        </Tooltip>
+      </div>
     );
   }
 

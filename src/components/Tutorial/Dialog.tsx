@@ -5,8 +5,7 @@ import { Tutorial, TutorialDialogStepDefinition, TutorialSelectionDialogStepDefi
 import { TutorialCallbacksState } from './CallbacksContext';
 import { TutorialStepCommon } from './Context';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
-import { redirectToAuth } from '@/lib/auth';
-import posthog from 'posthog-js';
+import FinishButton from './FinishButton';
 
 export type TutorialDialogStep = TutorialStepCommon &
   (TutorialDialogStepDefinition | TutorialSelectionDialogStepDefinition);
@@ -50,17 +49,7 @@ const TutorialDialog: React.FC<TutorialDialogProps> = ({
             Next
           </Button>
         )}
-        {showFinishButton && (
-          <Button
-            autoFocus
-            onClick={() => {
-              posthog.capture('tutorial_get_started_clicked');
-              redirectToAuth({ signup: true });
-            }}
-          >
-            Get Started
-          </Button>
-        )}
+        {showFinishButton && <FinishButton tutorialCallbacks={tutorialCallbacks} />}
       </DialogFooter>
     </DialogContent>
   </Dialog>

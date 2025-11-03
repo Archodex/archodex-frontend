@@ -128,10 +128,9 @@ export const AppSidebar: React.FC = () => {
           )}
           {isPlayground && (
             <Button
-              className="cursor-pointer"
               onClick={() => {
                 posthog.capture('sidebar_get_started_clicked');
-                redirectToAuth({ signup: true });
+                redirectToAuth({ signup: true, newTab: true });
               }}
             >
               Get Started
@@ -150,7 +149,7 @@ export const AppSidebar: React.FC = () => {
                   : tutorialCallbacksContext.resumeTutorial
               }
             >
-              {tutorialContext.atEnd ? 'Restart Tutorial' : 'Resume Tutorial'}
+              {tutorialContext.atEnd ? 'Start a Tutorial' : 'Resume Tutorial'}
             </Button>
           )}
         </SidebarContent>

@@ -203,4 +203,37 @@
   button {
     @apply cursor-pointer;
   }
+
+  #posthog-survey-container {
+    & button {
+      @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3;
+    }
+
+    & .question-header {
+      & label {
+        @apply font-semibold;
+      }
+
+      & p {
+        @apply text-sm text-muted-foreground;
+      }
+    }
+
+    & textarea {
+      /* Copied from shadcn's component style */
+      @apply border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 flex field-sizing-content min-h-16 w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 md:text-sm;
+    }
+
+    & .question-header {
+      @apply my-4;
+    }
+
+    & .bottom-section {
+      @apply mt-4 flex justify-end;
+    }
+
+    & .footer-branding {
+      @apply hidden;
+    }
+  }
 }

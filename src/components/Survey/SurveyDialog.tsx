@@ -33,7 +33,7 @@ const SurveyDialog: React.FC<DialogProps> = ({ survey, onDialogClosed }) => {
         }
       }}
     >
-      <DialogContent aria-describedby={undefined} className="not-dark:border-none">
+      <DialogContent aria-describedby={undefined} className="top-[20%] md:top-[50%] not-dark:border-none">
         <div id="posthog-survey-container" ref={displaySurvey} />
         <a
           className="absolute bottom-8 left-6 flex gap-1 items-center text-xs text-primary hover:underline"

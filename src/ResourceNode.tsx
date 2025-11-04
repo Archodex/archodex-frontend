@@ -175,8 +175,10 @@ const ResourceNode = ({ id, selected, data }: NodeProps<ResourceNode>) => {
     (data: ResourceNodeData) => {
       posthog.capture('resource_node_issue_badge_clicked', { resource_type: typeIdFromResourceId(data.id) });
 
-      if (!location.pathname.endsWith('/issues')) {
-        void navigate('./issues', { replace: true });
+      if (location.pathname.endsWith('/events')) {
+        void navigate('../issues', { replace: true, relative: 'path' });
+      } else if (!location.pathname.endsWith('/issues')) {
+        void navigate('./issues', { replace: true, relative: 'path' });
       }
 
       for (const issueId of data.resourceIssueIds) {

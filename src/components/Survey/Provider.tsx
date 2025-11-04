@@ -39,7 +39,9 @@ const SurveyProvider: React.FC<SurveyProviderProps> = ({ children }) => {
     if (survey) {
       setSurvey(survey);
     } else {
-      throw new Error(`Survey with name "${surveyName}" not found.`);
+      console.error(`Survey with name "${surveyName}" not found.`);
+      posthog.captureException(new Error(`Survey with name "${surveyName}" not found.`));
+      setSurvey(undefined);
     }
   }, [surveyName, surveys]);
 

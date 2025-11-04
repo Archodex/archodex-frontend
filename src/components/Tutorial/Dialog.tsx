@@ -33,7 +33,7 @@ const TutorialDialog: React.FC<TutorialDialogProps> = ({
 
   return (
     <Dialog defaultOpen onOpenChange={tutorialCallbacks.closeTutorial}>
-      <DialogContent aria-describedby={undefined} className="not-dark:border-none">
+      <DialogContent aria-describedby={undefined} className="pt-11 not-dark:border-none">
         <Tooltip>
           <TooltipTrigger asChild>
             <Button

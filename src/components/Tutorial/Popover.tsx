@@ -14,7 +14,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 import SurveyContext from '../Survey/Context';
 import SurveyName from '../Survey/SurveyName';
 
-export type TutorialPopoverStep = TutorialStepCommon & TutorialPopoverStepDefinition & { isInSidebar: boolean };
+export type TutorialPopoverStep = TutorialStepCommon & TutorialPopoverStepDefinition;
 
 export interface TutorialPopoverProps {
   anchor: HTMLElement | null;

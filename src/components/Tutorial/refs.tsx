@@ -3,7 +3,6 @@ import { TutorialStateRefs } from './Context';
 interface TutorialRefDefinition {
   isInPath?: string;
   isInListTab?: string;
-  isInSidebar?: boolean;
 }
 
 export const tutorialRefDefinitions = {
@@ -13,7 +12,6 @@ export const tutorialRefDefinitions = {
   prodStripeSecretAlert: { isInPath: '/:accountId/secrets' },
   prodStripeSecretIssueHardcoded: { isInPath: '/:accountId/secrets/issues', isInListTab: 'issues' },
   prodStripeSecretIssueMultipleHelds: { isInPath: '/:accountId/secrets/issues', isInListTab: 'issues' },
-  secretsSidebarItem: { isInSidebar: true },
   sendGridSecret: { isInPath: '/:accountId/secrets' },
   sendGridSecretAddEnvironment: { isInPath: '/:accountId/secrets' },
   sendGridSecretAddEnvironmentDialog: { isInPath: '/:accountId/secrets' },

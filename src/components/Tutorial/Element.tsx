@@ -3,7 +3,6 @@ import TutorialDialog from './Dialog';
 import TutorialPopover from './Popover';
 import { generatePath, useLocation, useMatches, useNavigate } from 'react-router';
 import { Button } from '../ui/button';
-import { useSidebar } from '../ui/sidebar';
 import TutorialContext from './Context';
 import TutorialCallbacksContext from './CallbacksContext';
 import { NotebookPen } from 'lucide-react';
@@ -17,9 +16,7 @@ const TutorialElement: React.FC = () => {
   const tutorialCallbacksContext = useContext(TutorialCallbacksContext);
   const { openSurvey } = useContext(SurveyContext);
   const routeMatch = useMatches().at(-1);
-  const { isMobile, openMobile, setOpenMobile } = useSidebar();
   const location = useLocation();
-  const [showPopover, setShowPopover] = React.useState(!currentStep.isInSidebar);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,28 +29,13 @@ const TutorialElement: React.FC = () => {
     }
   }, [closed, currentStep.isInPath, location.pathname, navigate, routeMatch?.params]);
 
-  // Delay the popover to allow the sidebar to open so it positions correctly
-  useEffect(() => {
-    if (isMobile) {
-      if (currentStep.isInSidebar && !openMobile) {
-        setShowPopover(false);
-        setOpenMobile(true);
-        setTimeout(() => {
-          setShowPopover(true);
-        }, 500);
-      }
-    } else {
-      setShowPopover(true);
-    }
-  }, [currentStep.isInSidebar, isMobile, openMobile, setOpenMobile]);
-
   if (!routeMatch) {
     throw new Error('Missing route match in TutorialElement');
   }
 
   if (closed) {
     return (
-      <div className="fixed z-40 bottom-10 right-10 flex gap-2">
+      <div className="fixed z-30 bottom-10 right-10 flex gap-2">
         <Button onClick={atEnd ? tutorialCallbacksContext.restartTutorial : tutorialCallbacksContext.resumeTutorial}>
           {atEnd ? 'Start a Tutorial' : 'Resume Tutorial'}
         </Button>
@@ -84,10 +66,8 @@ const TutorialElement: React.FC = () => {
 
   if (currentStep.type === 'dialog' || currentStep.type === 'selectionDialog') {
     return <TutorialDialog tutorialStep={currentStep} {...props} />;
-  } else if (showPopover) {
-    return <TutorialPopover anchor={refs[currentStep.anchorName]} tutorialStep={currentStep} {...props} />;
   } else {
-    return null;
+    return <TutorialPopover anchor={refs[currentStep.anchorName]} tutorialStep={currentStep} {...props} />;
   }
 };
 

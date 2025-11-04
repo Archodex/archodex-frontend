@@ -15,11 +15,9 @@ import {
 } from '@/components/ui/sidebar';
 import LogoHorizontalCoral from '@/components/LogoHorizontalCoral.svg?react';
 import LogoCoral from '@/components/LogoCoral.svg?react';
-import { useContext, useEffect, useState } from 'react';
 import { isPlayground } from '@/lib/utils';
 import { Button } from './ui/button';
-import TutorialCallbacksContext, { ElementRef } from './Tutorial/CallbacksContext';
-import TutorialContext from './Tutorial/Context';
+import { ElementRef } from './Tutorial/CallbacksContext';
 import AccountSwitcher from './AccountSwitcher';
 import User from './User';
 import { redirectToAuth } from '@/lib/auth';
@@ -68,39 +66,11 @@ const menuItems = (items: MenuItem[], accountId: string | undefined, setOpenMobi
   });
 
 export const AppSidebar: React.FC = () => {
-  const tutorialContext = useContext(TutorialContext);
-  const { elementRef: elementRef } = useContext(TutorialCallbacksContext).refs;
-  const tutorialCallbacksContext = useContext(TutorialCallbacksContext);
-  const { openMobile, setOpenMobile } = useSidebar();
-  const [showResumeTutorialButton, setShowResumeTutorialButton] = useState(openMobile && tutorialContext.closed);
+  const { setOpenMobile } = useSidebar();
   const { accountId } = useParams();
 
-  useEffect(() => {
-    if (tutorialContext.closed) {
-      if (openMobile) {
-        setTimeout(() => {
-          setShowResumeTutorialButton(true);
-        }, 700);
-      } else {
-        setShowResumeTutorialButton(false);
-      }
-    } else {
-      setShowResumeTutorialButton(false);
-
-      if (openMobile && !tutorialContext.currentStep.isInSidebar) {
-        setOpenMobile(false);
-      }
-    }
-  }, [openMobile, setOpenMobile, tutorialContext.closed, tutorialContext.currentStep.isInSidebar]);
-
   const items: MenuItem[] = [
-    {
-      title: 'Secrets',
-      url: '/:accountId/secrets',
-      icon: <LockKeyhole />,
-      ref: elementRef('secretsSidebarItem'),
-      disabledWhenNoAccount: true,
-    },
+    { title: 'Secrets', url: '/:accountId/secrets', icon: <LockKeyhole />, disabledWhenNoAccount: true },
     { title: 'Environments', url: '/:accountId/environments', icon: <SendToBack />, disabledWhenNoAccount: true },
   ];
 
@@ -140,18 +110,6 @@ export const AppSidebar: React.FC = () => {
         <SidebarSeparator />
         <SidebarContent className="p-2">
           <SidebarMenu>{menuItems(items, accountId, setOpenMobile)}</SidebarMenu>
-          {showResumeTutorialButton && (
-            <Button
-              className="fixed bottom-10 right-10 z-50 cursor-pointer"
-              onClick={
-                tutorialContext.atEnd
-                  ? tutorialCallbacksContext.restartTutorial
-                  : tutorialCallbacksContext.resumeTutorial
-              }
-            >
-              {tutorialContext.atEnd ? 'Start a Tutorial' : 'Resume Tutorial'}
-            </Button>
-          )}
         </SidebarContent>
         <SidebarFooter>
           <SidebarMenu>

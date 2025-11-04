@@ -84,12 +84,7 @@ const getNextStep = (tutorial: Tutorial, stepIndex: number): TutorialStep => {
   };
 
   if (stepDefinition.type === 'popover') {
-    return {
-      ...stepDefinition,
-      ...callbacks,
-      isInSidebar: !!tutorialRefDefinitions[stepDefinition.anchorName].isInSidebar,
-      isInPath: tutorialRefDefinitions[stepDefinition.anchorName].isInPath,
-    };
+    return { ...stepDefinition, ...callbacks, isInPath: tutorialRefDefinitions[stepDefinition.anchorName].isInPath };
   } else {
     return { ...stepDefinition, ...callbacks };
   }

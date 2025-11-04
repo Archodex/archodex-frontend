@@ -35,7 +35,7 @@ const TutorialElement: React.FC = () => {
 
   if (closed) {
     return (
-      <div className="fixed z-30 bottom-10 right-10 flex gap-2">
+      <div className="fixed z-30 bottom-2 md:bottom-10 right-2 md:right-10 flex gap-2">
         <Button onClick={atEnd ? tutorialCallbacksContext.restartTutorial : tutorialCallbacksContext.resumeTutorial}>
           {atEnd ? 'Start a Tutorial' : 'Resume Tutorial'}
         </Button>

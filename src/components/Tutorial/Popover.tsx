@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { Popover, PopoverAnchor, PopoverContent } from '../ui/popover';
 import { PopoverArrow } from '@radix-ui/react-popover';
 import { CardDescription, CardTitle } from '../ui/card';
 import { Button } from '../ui/button';
 import { TutorialPopoverStepDefinition } from './Content';
-import { X } from 'lucide-react';
+import { NotebookPen, X } from 'lucide-react';
 import TutorialLightbox from './Lightbox';
 import { TutorialCallbacksState } from './CallbacksContext';
 import { TutorialStepCommon } from './Context';
 import FinishButton from './FinishButton';
+import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
+import SurveyContext from '../Survey/Context';
+import SurveyName from '../Survey/SurveyName';
 
 export type TutorialPopoverStep = TutorialStepCommon & TutorialPopoverStepDefinition & { isInSidebar: boolean };
 
@@ -30,6 +33,7 @@ const TutorialPopover: React.FC<TutorialPopoverProps> = ({
   showFinishButton,
   tutorialCallbacks,
 }) => {
+  const { openSurvey } = useContext(SurveyContext);
   const popoverContentRef = React.useRef<HTMLDivElement>(null);
   const [key, setKey] = React.useState(0);
 
@@ -77,12 +81,29 @@ const TutorialPopover: React.FC<TutorialPopoverProps> = ({
             tutorialStep.contentClassName ?? '',
           ].join(' ')}
         >
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                tabIndex={-1}
+                variant="link"
+                className="absolute p-1! right-6 top-2.5 h-auto text-foreground/70 hover:text-foreground"
+                onClick={() => {
+                  tutorialCallbacks.closeTutorial();
+                  openSurvey(SurveyName.PlaygroundFeedback);
+                }}
+              >
+                <NotebookPen className="size-[12px]" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent className="z-[120]">Give Us Feedback</TooltipContent>
+          </Tooltip>
+
           <button
             tabIndex={-1}
             onClick={() => {
               tutorialCallbacks.closeTutorial();
             }}
-            className="absolute top-3 right-2 text-muted-foreground hover:text-foreground"
+            className="absolute top-3 right-2 text-foreground/70 hover:text-foreground"
             aria-label="Close"
           >
             <X className="w-4 h-4" />

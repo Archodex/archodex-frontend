@@ -114,7 +114,11 @@ export const AppSidebar: React.FC = () => {
         <SidebarFooter>
           <SidebarMenu>
             {menuItems(footerItems, accountId, setOpenMobile)}
-            <User />
+            <User
+              onClick={() => {
+                setOpenMobile(false);
+              }}
+            />
           </SidebarMenu>
         </SidebarFooter>
         <SidebarRail />

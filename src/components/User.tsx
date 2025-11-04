@@ -15,7 +15,11 @@ import SurveyContext from './Survey/Context';
 import SurveyName from './Survey/SurveyName';
 import { isPlayground } from '@/lib/utils';
 
-const User: React.FC = () => {
+interface UserProps {
+  onClick?: () => void;
+}
+
+const User: React.FC<UserProps> = ({ onClick }) => {
   const { openSurvey } = useContext(SurveyContext);
   const navigate = useNavigate();
 
@@ -37,20 +41,28 @@ const User: React.FC = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>{userEmail()}</DropdownMenuLabel>
-          <DropdownMenuItem className="cursor-pointer" onClick={() => void navigate('/user/settings')}>
+          <DropdownMenuItem
+            className="cursor-pointer"
+            onClick={() => {
+              onClick?.();
+              void navigate('/user/settings');
+            }}
+            disabled={isPlayground}
+          >
             <UserCog className="text-primary" />
             <span>User Settings</span>
           </DropdownMenuItem>
           <DropdownMenuItem
             className="cursor-pointer"
             onClick={() => {
+              onClick?.();
               openSurvey(isPlayground ? SurveyName.PlaygroundFeedback : SurveyName.AppFeedback);
             }}
           >
             <NotebookPen className="text-primary" />
             <span>Give Us Feedback</span>
           </DropdownMenuItem>
-          <DropdownMenuItem className="cursor-pointer" onClick={() => void navigate('/logout')}>
+          <DropdownMenuItem className="cursor-pointer" onClick={() => void navigate('/logout')} disabled={isPlayground}>
             <LogOut className="text-primary" />
             <span>Logout</span>
           </DropdownMenuItem>

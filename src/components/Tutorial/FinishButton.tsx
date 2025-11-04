@@ -27,7 +27,7 @@ const FinishButton: React.FC<FinishButtonProps> = ({ tutorialCallbacks }) => {
     <ButtonGroup className="w-full md:w-auto">
       <Button
         autoFocus
-        className="grow"
+        className="grow pl-11 md:pl-4 pr-2"
         onClick={() => {
           posthog.capture('tutorial_keep_playing_clicked');
           tutorialCallbacks.closeTutorial();

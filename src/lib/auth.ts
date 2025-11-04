@@ -12,8 +12,9 @@ const archodexDomain = () =>
 
 const authDomain = () => `auth.${archodexDomain()}`;
 
-export function redirectToAuth(options?: { signup?: boolean }) {
+export function redirectToAuth(options?: { signup?: boolean; newTab?: boolean }) {
   const signup = options?.signup ?? false;
+  const newTab = options?.newTab ?? false;
   const path = signup ? '/signup' : '/oauth2/authorize';
 
   const state = btoa(crypto.getRandomValues(new Uint8Array(16)).toString());
@@ -30,7 +31,11 @@ export function redirectToAuth(options?: { signup?: boolean }) {
   authUrl.searchParams.set('state', state);
   authUrl.searchParams.set('redirect_uri', redirect_uri);
 
-  location.href = authUrl.toString();
+  if (newTab) {
+    window.open(authUrl.toString(), '_blank');
+  } else {
+    location.href = authUrl.toString();
+  }
 }
 
 let _userEmail: string | undefined;

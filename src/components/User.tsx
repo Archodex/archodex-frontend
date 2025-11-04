@@ -1,5 +1,5 @@
-import React from 'react';
-import { ChevronsUpDown, LogOut, UserCog, User as UserIcon } from 'lucide-react';
+import React, { useContext } from 'react';
+import { ChevronsUpDown, LogOut, NotebookPen, UserCog, User as UserIcon } from 'lucide-react';
 import { SidebarMenuButton, SidebarMenuItem } from './ui/sidebar';
 import {
   DropdownMenu,
@@ -11,8 +11,16 @@ import {
 import { useNavigate } from 'react-router';
 import { userEmail } from '@/lib/auth';
 import posthog from 'posthog-js';
+import SurveyContext from './Survey/Context';
+import SurveyName from './Survey/SurveyName';
+import { isPlayground } from '@/lib/utils';
 
-const User: React.FC = () => {
+interface UserProps {
+  onClick?: () => void;
+}
+
+const User: React.FC<UserProps> = ({ onClick }) => {
+  const { openSurvey } = useContext(SurveyContext);
   const navigate = useNavigate();
 
   return (
@@ -33,11 +41,28 @@ const User: React.FC = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>{userEmail()}</DropdownMenuLabel>
-          <DropdownMenuItem className="cursor-pointer" onClick={() => void navigate('/user/settings')}>
+          <DropdownMenuItem
+            className="cursor-pointer"
+            onClick={() => {
+              onClick?.();
+              void navigate('/user/settings');
+            }}
+            disabled={isPlayground}
+          >
             <UserCog className="text-primary" />
             <span>User Settings</span>
           </DropdownMenuItem>
-          <DropdownMenuItem className="cursor-pointer" onClick={() => void navigate('/logout')}>
+          <DropdownMenuItem
+            className="cursor-pointer"
+            onClick={() => {
+              onClick?.();
+              openSurvey(isPlayground ? SurveyName.PlaygroundFeedback : SurveyName.AppFeedback);
+            }}
+          >
+            <NotebookPen className="text-primary" />
+            <span>Give Us Feedback</span>
+          </DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer" onClick={() => void navigate('/logout')} disabled={isPlayground}>
             <LogOut className="text-primary" />
             <span>Logout</span>
           </DropdownMenuItem>

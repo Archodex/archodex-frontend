@@ -84,12 +84,7 @@ const getNextStep = (tutorial: Tutorial, stepIndex: number): TutorialStep => {
   };
 
   if (stepDefinition.type === 'popover') {
-    return {
-      ...stepDefinition,
-      ...callbacks,
-      isInSidebar: !!tutorialRefDefinitions[stepDefinition.anchorName].isInSidebar,
-      isInPath: tutorialRefDefinitions[stepDefinition.anchorName].isInPath,
-    };
+    return { ...stepDefinition, ...callbacks, isInPath: tutorialRefDefinitions[stepDefinition.anchorName].isInPath };
   } else {
     return { ...stepDefinition, ...callbacks };
   }
@@ -308,21 +303,25 @@ const tutorialReducer: React.Reducer<TutorialState, TutorialReducerArg> = (state
       return newState;
     }
 
-    case 'restartTutorial':
+    case 'restartTutorial': {
       sessionStorage.removeItem('tutorialClosed');
       sessionStorage.setItem('tutorialName', Tutorial.Intro);
-      sessionStorage.setItem('tutorialStepIndex', '0');
+
+      const tutorialStep = tutorials[Tutorial.Intro].length - 1;
+
+      sessionStorage.setItem('tutorialStepIndex', tutorialStep.toString());
 
       posthog.capture('tutorial_restarted');
 
       return {
         ...state,
         tutorialName: Tutorial.Intro,
-        stepIndex: 0,
-        currentStep: getNextStep(Tutorial.Intro, 0),
+        stepIndex: tutorialStep,
+        currentStep: getNextStep(Tutorial.Intro, tutorialStep),
         closed: false,
         atEnd: false,
       };
+    }
 
     case 'setElementRef':
       return { ...state, refs: { ...state.refs, [arg.name]: arg.value } };

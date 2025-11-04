@@ -4,5 +4,7 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.auth.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  // For shadcn to save components in the right location
+  "compilerOptions": { "baseUrl": ".", "paths": { "@/*": ["./src/*"] } }
 }

@@ -7,6 +7,7 @@ import { AuthError } from './ErrorBoundary';
 import { useContext, useMemo } from 'react';
 import TutorialProvider from './components/Tutorial/Provider';
 import RoutesContext from './contexts/RoutesContext';
+import SurveyProvider from './components/Survey/Provider';
 
 export interface RouteHandle {
   title: string;
@@ -70,10 +71,12 @@ function Router() {
 function App() {
   return (
     <ThemeProvider>
-      <TutorialProvider>
-        <Router />
-        <Toaster />
-      </TutorialProvider>
+      <SurveyProvider>
+        <TutorialProvider>
+          <Router />
+          <Toaster />
+        </TutorialProvider>
+      </SurveyProvider>
     </ThemeProvider>
   );
 }

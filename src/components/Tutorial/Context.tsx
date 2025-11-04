@@ -12,7 +12,6 @@ export interface TutorialStepCommon {
   showPrevButton: (routeMatch: UIMatch) => boolean;
   showNextButton: (routeMatch: UIMatch) => boolean;
   showFinishButton: (routeMatch: UIMatch) => boolean;
-  isInSidebar?: boolean;
   isInPath?: string;
 }
 
@@ -48,7 +47,6 @@ const TutorialContext = createContext<TutorialState>({
     showPrevButton: () => false,
     showNextButton: () => false,
     showFinishButton: () => false,
-    isInSidebar: false,
     isInPath: '',
   },
   closed: false,

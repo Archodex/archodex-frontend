@@ -147,7 +147,7 @@ const hardcodedSecretsTutorialSteps: TutorialStepDefinition[] = [
       </>
     ),
     anchorName: 'graphView',
-    contentClassName: 'w-100',
+    contentClassName: 'md:w-100',
     lightbox: true,
   },
   {
@@ -166,9 +166,14 @@ const hardcodedSecretsTutorialSteps: TutorialStepDefinition[] = [
   {
     type: 'popover',
     content: (
-      <p>
-        <i>Oops!</i> What’s wrong with this secret value? Let’s click on the alert to find out.
-      </p>
+      <>
+        <p>
+          <i>Oops!</i> What’s wrong with this secret value? Let’s click on the alert to find out.
+        </p>
+        <p className="md:hidden text-xs text-muted-foreground">
+          (On small screens you may want to zoom in to make it easier to click on the button)
+        </p>
+      </>
     ),
     anchorName: 'prodStripeSecretAlert',
     advanceOnAnchorClicked: true,
@@ -196,9 +201,12 @@ const hardcodedSecretsTutorialSteps: TutorialStepDefinition[] = [
             </code>
           </b>
         </p>
+        <p className="md:hidden text-xs text-muted-foreground">
+          (Scroll sideways to see all the information on a small screen)
+        </p>
       </>
     ),
-    contentClassName: 'w-100',
+    contentClassName: 'md:w-100',
     anchorName: 'prodStripeSecretIssueHardcoded',
     lightbox: true,
   },
@@ -221,7 +229,7 @@ const hardcodedSecretsTutorialSteps: TutorialStepDefinition[] = [
         </p>
       </>
     ),
-    contentClassName: 'w-100',
+    contentClassName: 'md:w-100',
     anchorName: 'prodStripeSecretIssueMultipleHelds',
     lightbox: true,
   },
@@ -309,6 +317,9 @@ const crossEnvironmentSecretsTutorialSteps: TutorialStepDefinition[] = [
         <p>
           This secret is used by the production emailservice. Click on this <i>add environment tag</i> button to add the{' '}
           <i>prod</i> environment tag to this secret.
+        </p>
+        <p className="md:hidden text-xs text-muted-foreground">
+          (On small screens you may want to zoom in to make it easier to click on the button)
         </p>
       </>
     ),

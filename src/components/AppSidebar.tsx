@@ -86,7 +86,7 @@ export const AppSidebar: React.FC = () => {
             <LogoHorizontalCoral className="w-auto h-10 group-data-[collapsible=icon]:hidden" />
             <LogoCoral className="w-full h-10 hidden group-data-[collapsible=icon]:block" />
           </div>
-          <div className="flex md:hidden">
+          <div className="flex justify-center md:hidden">
             <LogoHorizontalCoral className="w-auto h-6" />
           </div>
           {!isPlayground && (

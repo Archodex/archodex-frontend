@@ -24,9 +24,10 @@ const FinishButton: React.FC<FinishButtonProps> = ({ tutorialCallbacks }) => {
   const { openSurvey } = useContext(SurveyContext);
 
   return (
-    <ButtonGroup>
+    <ButtonGroup className="w-full md:w-auto">
       <Button
         autoFocus
+        className="grow"
         onClick={() => {
           posthog.capture('tutorial_keep_playing_clicked');
           tutorialCallbacks.closeTutorial();

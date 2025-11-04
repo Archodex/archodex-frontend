@@ -434,7 +434,7 @@ const ResourceNode = ({ id, selected, data }: NodeProps<ResourceNode>) => {
           'flex',
           'flex-col',
           'rounded-md',
-          'overflow-auto',
+          'overflow-hidden',
           'shadow-lg',
           'hover:shadow-2xl',
           'focus:shadow-2xl',

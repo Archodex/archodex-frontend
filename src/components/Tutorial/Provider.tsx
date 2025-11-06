@@ -289,6 +289,7 @@ const tutorialReducer: React.Reducer<TutorialState, TutorialReducerArg> = (state
         refs: state.refs,
         closed: false,
         openTagEnvironmentDialogRef: state.openTagEnvironmentDialogRef,
+        queryDataDispatchRef: state.queryDataDispatchRef,
         queuedStateUpdates: state.queuedStateUpdates,
       };
 

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Atom, LockKeyhole, SendToBack } from 'lucide-react';
 import { generatePath, NavLink, useParams } from 'react-router';
 
@@ -22,6 +23,7 @@ import AccountSwitcher from './AccountSwitcher';
 import User from './User';
 import { redirectToAuth } from '@/lib/auth';
 import posthog from 'posthog-js';
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 
 interface MenuItem {
   ref?: ElementRef;
@@ -34,6 +36,8 @@ interface MenuItem {
 
 const menuItems = (items: MenuItem[], accountId: string | undefined, setOpenMobile: (open: boolean) => void) =>
   items.map((item) => {
+    const [tooltipOpen, setTooltipOpen] = useState(false);
+
     if (item.hideFromPlayground && isPlayground) {
       return null;
     }
@@ -44,23 +48,36 @@ const menuItems = (items: MenuItem[], accountId: string | undefined, setOpenMobi
 
     return (
       <SidebarMenuItem key={item.title} ref={item.ref}>
-        <SidebarMenuButton
-          asChild
-          isActive={window.location.pathname.startsWith(url)}
-          className={[
-            'min-h-fit text-md [&>svg]:size-5 [&>svg]:text-primary',
-            disabled ? 'text-muted-foreground pointer-events-none cursor-default' : '',
-          ].join(' ')}
-          onClick={() => {
-            setOpenMobile(false);
-            posthog.capture('sidebar_item_clicked', { item: item.title });
-          }}
-        >
-          <NavLink to={url} relative="path">
-            {item.icon}
-            <span>{item.title}</span>
-          </NavLink>
-        </SidebarMenuButton>
+        <Tooltip open={tooltipOpen}>
+          <TooltipTrigger asChild>
+            <SidebarMenuButton
+              asChild
+              isActive={window.location.pathname.startsWith(url)}
+              className={[
+                'min-h-fit text-md [&>svg]:size-5 [&>svg]:text-primary',
+                disabled ? 'text-muted-foreground! cursor-default' : '',
+              ].join(' ')}
+              onClick={() => {
+                if (disabled) {
+                  setTooltipOpen(true);
+                  setTimeout(() => {
+                    setTooltipOpen(false);
+                  }, 2000);
+                  return;
+                }
+
+                setOpenMobile(false);
+                posthog.capture('sidebar_item_clicked', { item: item.title });
+              }}
+            >
+              <NavLink to={url} relative="path">
+                {item.icon}
+                <span>{item.title}</span>
+              </NavLink>
+            </SidebarMenuButton>
+          </TooltipTrigger>
+          <TooltipContent>Select an Account First</TooltipContent>
+        </Tooltip>
       </SidebarMenuItem>
     );
   });

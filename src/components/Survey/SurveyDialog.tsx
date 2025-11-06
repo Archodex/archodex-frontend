@@ -34,9 +34,9 @@ const SurveyDialog: React.FC<DialogProps> = ({ survey, onDialogClosed }) => {
       }}
     >
       <DialogContent aria-describedby={undefined} className="top-[20%] md:top-[50%] not-dark:border-none">
-        <div id="posthog-survey-container" ref={displaySurvey} />
+        <div id="posthog-survey-container" className="pb-10" ref={displaySurvey} />
         <a
-          className="absolute bottom-8 left-6 flex gap-1 items-center text-xs text-primary hover:underline"
+          className="absolute bottom-6 left-6 flex gap-1 items-center text-xs text-primary hover:underline"
           href="https://github.com/archodex/archodex/issues/new"
           target="_blank"
           rel="noreferrer"

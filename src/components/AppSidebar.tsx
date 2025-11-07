@@ -97,7 +97,7 @@ export const AppSidebar: React.FC = () => {
 
   return (
     <>
-      <Sidebar collapsible="icon" className="border-[hsl(var(--sidebar-border))]">
+      <Sidebar collapsible="icon" className="border-sidebar-border">
         <SidebarHeader>
           <div className="hidden md:flex">
             <LogoHorizontalCoral className="w-auto h-10 group-data-[collapsible=icon]:hidden" />

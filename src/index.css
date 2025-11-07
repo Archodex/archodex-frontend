@@ -87,6 +87,8 @@
   --color-palette-13-inherited: hsl(117.5, 39%, 86%);
   --color-palette-14-inherited: hsl(140, 39%, 86%);
   --color-palette-15-inherited: hsl(162.5, 39%, 86%);
+
+  --color-query-graph-bg: oklch(0.3 0 0);
 }
 
 /*
@@ -151,14 +153,15 @@
     --sidebar-border: var(--color-neutral-800);
     --sidebar-ring: #ee847b;
 
-    --background: black;
+    --base: black;
+    --background: var(--base);
     --foreground: white;
-    --card: black;
-    --card-foreground: black;
-    --popover: black;
+    --card: var(--base);
+    --card-foreground: var(--base);
+    --popover: var(--base);
     --popover-foreground: white;
     --primary: #ee847b;
-    --primary-foreground: black;
+    --primary-foreground: var(--base);
     --secondary: var(--color-neutral-900);
     --secondary-foreground: white;
     --muted: var(--color-neutral-900);

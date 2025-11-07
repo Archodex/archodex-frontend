@@ -440,9 +440,9 @@ const ResourceNode = ({ id, selected, data }: NodeProps<ResourceNode>) => {
           'shadow-lg',
           'hover:shadow-2xl',
           'focus:shadow-2xl',
-          'dark:shadow-lg-dark',
-          'dark:hover:shadow-2xl-dark',
-          'dark:focus:shadow-2xl-dark',
+          //'dark:shadow-lg-dark',
+          //'dark:hover:shadow-2xl-dark',
+          //'dark:focus:shadow-2xl-dark',
           'pointer-events-auto',
         ].join(' ')}
         ref={tutorialSendGridSecretRef}

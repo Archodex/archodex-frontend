@@ -124,7 +124,7 @@ export const AppSidebar: React.FC = () => {
             </Button>
           )}
         </SidebarHeader>
-        <SidebarSeparator />
+        <SidebarSeparator className="w-auto!" />
         <SidebarContent className="p-2">
           <SidebarMenu>{menuItems(items, accountId, setOpenMobile)}</SidebarMenu>
         </SidebarContent>

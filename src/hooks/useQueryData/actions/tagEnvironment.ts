@@ -59,6 +59,12 @@ const tagEnvironment = (
   const resource = { ...resources[resourceIndex] };
   resources[resourceIndex] = resource;
 
+  if (resource.environments?.includes(action.environment)) {
+    // Environment already tagged on this resource
+    completionCallbackForTests?.();
+    return state;
+  }
+
   resource.environments = [...(resource.environments ?? []), action.environment];
 
   const nodeId = nodeIdFromResourceId(resource.id);

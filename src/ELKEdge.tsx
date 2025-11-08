@@ -58,7 +58,7 @@ const ELKEdge = ({ id, selected, data, markerEnd }: EdgeProps<ELKEdge>) => {
       <BaseEdge id={id} className={edgeClassName(selected, data.eventChainHovered)} path={path} markerEnd={markerEnd} />
       <EdgeLabelRenderer>
         <div
-          className="absolute z-1 p-[2px] text-[10px] bg-background"
+          className="absolute z-1 p-[2px] text-[10px] bg-query-graph-bg"
           style={{
             transform: `translate(-50%, -50%) translate(${String(label.x)}px, ${String(calculateClosestPathMidpoint(label, points))}px)`,
           }}

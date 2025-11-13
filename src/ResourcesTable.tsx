@@ -74,8 +74,8 @@ const ResourcesTable: React.FC<ResourcesTableProps> = ({ resources, selectedReso
         sortingFn: (rowA, rowB) =>
           nodeIdFromResourceId(rowA.original.id).localeCompare(nodeIdFromResourceId(rowB.original.id)),
         cell: ({ getValue }) => (
-          <div className="h-full flex items-center">
-            <ResourceIcons id={getValue<ResourceId>()} />
+          <div className="h-full flex items-center gap-1">
+            <ResourceIcons id={getValue<ResourceId>()} heightInPixels={32} />
             <div className="flex items-center">
               <ResourceLink id={getValue<ResourceId>()} />
             </div>

@@ -15,14 +15,16 @@ type ELKEdge = Edge<ELKEdgeData, 'elk'>;
 
 const edgeClassName = (selected = false, eventChainHovered = false) => {
   // Stroke colors must be !important to override react-flow's default styles
-  const classes = ['stroke-foreground', 'dark:stroke-primary'];
+  const classes = [];
 
-  if (selected) {
-    classes.push('stroke-primary', 'stroke-[2px]');
+  if (selected && eventChainHovered) {
+    classes.push('stroke-edge-selected', 'stroke-[3px]');
+  } else if (selected) {
+    classes.push('stroke-edge-selected', 'stroke-[2px]');
   } else if (eventChainHovered) {
-    classes.push('opacity-40', 'stroke-[2px]');
+    classes.push('stroke-edge-hover', 'stroke-[2px]');
   } else {
-    classes.push('opacity-40');
+    classes.push('stroke-edge');
   }
 
   return classes.join(' ');

@@ -264,11 +264,9 @@ const Inner: React.FC<QueryGraphProps> = ({ nodes, edges, eventChainLinks, laidO
             // React flow has built-in styling that is hard to override...
             className={[
               'bg-background',
-              'shadow-[0_0_2px_1px_rgba(0,0,0,0.08)]',
               '*:not-last:border-b',
-              // Shadows don't work as well in dark mode
-              'dark:shadow-none',
-              'dark:border',
+              'border',
+              'shadow-md',
               // Color for disabled button icons
               '*:disabled:[&_svg]:stroke-[#ddd]',
               '*:disabled:[&_svg]:dark:stroke-[#777]',

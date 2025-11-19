@@ -74,8 +74,8 @@ const ResourcesTable: React.FC<ResourcesTableProps> = ({ resources, selectedReso
         sortingFn: (rowA, rowB) =>
           nodeIdFromResourceId(rowA.original.id).localeCompare(nodeIdFromResourceId(rowB.original.id)),
         cell: ({ getValue }) => (
-          <div className="h-full flex items-center">
-            <ResourceIcons id={getValue<ResourceId>()} />
+          <div className="h-full flex items-center gap-1">
+            <ResourceIcons id={getValue<ResourceId>()} heightInPixels={32} />
             <div className="flex items-center">
               <ResourceLink id={getValue<ResourceId>()} />
             </div>
@@ -104,13 +104,17 @@ const ResourcesTable: React.FC<ResourcesTableProps> = ({ resources, selectedReso
         accessorKey: 'first_seen_at',
         header: `First Seen (${TZ_OFFSET})`,
         sortingFn: 'datetime',
-        cell: ({ getValue }) => <span className="text-nowrap">{new Date(getValue<string>()).toLocaleString()}</span>,
+        cell: ({ getValue }) => (
+          <span className="text-table-muted text-nowrap">{new Date(getValue<string>()).toLocaleString()}</span>
+        ),
       },
       {
         accessorKey: 'last_seen_at',
         header: `Last Seen (${TZ_OFFSET})`,
         sortingFn: 'datetime',
-        cell: ({ getValue }) => <span className="text-nowrap">{new Date(getValue<string>()).toLocaleString()}</span>,
+        cell: ({ getValue }) => (
+          <span className="text-table-muted text-nowrap">{new Date(getValue<string>()).toLocaleString()}</span>
+        ),
       },
     ],
     initialState: { sorting: [{ id: 'id', desc: false }] },

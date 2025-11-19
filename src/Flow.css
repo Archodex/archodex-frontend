@@ -11,8 +11,8 @@ defs > marker {
     stroke: var(--color-foreground);
 
     html.dark & {
-      fill: var(--color-primary);
-      stroke: var(--color-primary);
+      fill: var(--edge);
+      stroke: var(--edge);
     }
   }
 

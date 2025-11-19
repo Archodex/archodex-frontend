@@ -77,7 +77,7 @@ const ResourceIcons: React.FC<ResourceIconsProps> = ({
     </TooltipProvider>,
   );
 
-  return <>{icons}</>;
+  return <div className="flex gap-0.5">{icons}</div>;
 };
 
 const iconClassName = (highlighted: boolean) => {
